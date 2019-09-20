@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1568859463500.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "2538343621",
+    "id" : "76DFDD7E",
+    "lastKnownWriteTime" : 1568994393,
+    "last_content_update" : 1568994393579,
+    "path" : "~/Desktop/thesis/heterotry/heterorpack/R/cefee.R",
+    "project_path" : "R/cefee.R",
+    "properties" : {
+        "cursorPosition" : "10,2",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 6,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

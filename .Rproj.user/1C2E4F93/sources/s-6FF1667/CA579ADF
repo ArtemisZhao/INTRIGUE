@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1568858670631.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "3532879986",
+    "id" : "CA579ADF",
+    "lastKnownWriteTime" : 1568994395,
+    "last_content_update" : 1568994395448,
+    "path" : "~/Desktop/thesis/heterotry/heterorpack/R/bf.cal.R",
+    "project_path" : "R/bf.cal.R",
+    "properties" : {
+        "cursorPosition" : "12,2",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

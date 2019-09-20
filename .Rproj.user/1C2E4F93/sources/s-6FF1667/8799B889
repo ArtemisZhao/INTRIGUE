@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1568934648188.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "1434590835",
+    "id" : "8799B889",
+    "lastKnownWriteTime" : 1568935061,
+    "last_content_update" : 1568935061,
+    "path" : "~/Desktop/thesis/heterotry/heterorpack/R/data.R",
+    "project_path" : "R/data.R",
+    "properties" : {
+        "cursorPosition" : "18,12",
+        "scrollLine" : "0",
+        "tempName" : "Untitled1"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 8,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
