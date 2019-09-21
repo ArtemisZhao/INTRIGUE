@@ -34,6 +34,7 @@
 #' data("heterodata")
 #' hetero.out<-hetero(heterodata)
 #' names(hetero.out)
+#' print(hetero.out$est_prop)
 #'
 hetero<-function(data,krep=NULL,kirep=NULL,oa=NULL,sq_em_tol=1e-7){
 ### Hyperparam- Grid set up

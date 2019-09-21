@@ -44,5 +44,6 @@ for the given individuals(units) shared in different replicates.
 data("heterodata")
 hetero.out<-hetero(heterodata)
 names(hetero.out)
+print(hetero.out$est_prop)
 
 }

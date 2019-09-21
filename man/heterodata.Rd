@@ -17,5 +17,6 @@ The true proportion for the null, the reproducible and the irreproducible group 
 data("heterodata")
 hetero.out<-hetero(heterodata)
 names(hetero.out)
+print(hetero.out$est_prop)
 }
 \keyword{datasets}

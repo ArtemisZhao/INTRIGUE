@@ -16,4 +16,5 @@
 #'data("heterodata")
 #'hetero.out<-hetero(heterodata)
 #'names(hetero.out)
+#'print(hetero.out$est_prop)
 "heterodata"
