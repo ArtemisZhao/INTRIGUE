@@ -4,7 +4,7 @@
 \alias{cefee}
 \title{Barbeta Integration Function}
 \usage{
-cefee(x, param = data, z = i)
+cefee(x, param = data, z = i, size = m)
 }
 \arguments{
 \item{x}{Unknown parameter, index the variable to be integrated out.(\eqn{beta})}

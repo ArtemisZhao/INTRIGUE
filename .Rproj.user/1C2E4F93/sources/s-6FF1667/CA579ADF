@@ -5,15 +5,15 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "3532879986",
+    "hash" : "0",
     "id" : "CA579ADF",
-    "lastKnownWriteTime" : 1568994395,
-    "last_content_update" : 1568994395448,
+    "lastKnownWriteTime" : 1569101975,
+    "last_content_update" : 1569101975400,
     "path" : "~/Desktop/thesis/heterotry/heterorpack/R/bf.cal.R",
     "project_path" : "R/bf.cal.R",
     "properties" : {
-        "cursorPosition" : "12,2",
-        "scrollLine" : "0"
+        "cursorPosition" : "58,0",
+        "scrollLine" : "41"
     },
     "read_only" : false,
     "read_only_alternatives" : [

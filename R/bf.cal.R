@@ -24,9 +24,9 @@ bf.cal<-function(data,hyperparam){
     for (k in 1:K){
       k2<-hyperparam[k,1]^2
       oa2<-hyperparam[k,2]^2
-      bfn[(i-1)*K+k]<-integrate(function(x,param=data,z=i){
+      bfn[(i-1)*K+k]<-integrate(function(x,param=data,z=i,size=m){
         val<-1
-        for (j in 1:m)
+        for (j in 1:size)
         {
           beta<-param[z,2*(j-1)+1]
           ds2<-param[z,2*(j-1)+2]**2
@@ -51,7 +51,7 @@ bf.cal<-function(data,hyperparam){
       fac<-1/(2*pi*ds2)
       val0=val0*sqrt(fac)*exp(-0.5*beta^2/ds2)
       if (val0==0){
-        val0<-1e-298
+        val0<-1e-300
       }
     }
     bfd[i]<-val0
@@ -61,7 +61,7 @@ bf.cal<-function(data,hyperparam){
     for (k in 1:K){
       bf[(i-1)*(K+1)+1]<-1
       bfmed<-bfn[(i-1)*K+k]/bfd[i]
-      #if (bfmed==Inf){bfmed=1e300}
+      if (bfmed==Inf){bfmed=1e300}
       bf[(i-1)*(K+1)+k+1]<-bfmed
     }
   }

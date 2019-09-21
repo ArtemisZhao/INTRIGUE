@@ -9,9 +9,9 @@
 #'
 #' @export
 #'
-cefee<-function(x,param=data,z=i){
+cefee<-function(x,param=data,z=i,size=m){
   val<-1
-  for (j in 1:m)
+  for (j in 1:size)
   {
     beta<-param[z,2*(j-1)+1]
     ds2<-param[z,2*(j-1)+2]**2
