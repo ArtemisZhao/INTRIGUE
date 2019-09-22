@@ -1,13 +1,13 @@
 #' Bayes Factor Calculation Scheme
 #'
-#' A function that calculates bayes factor for each data pair on each grid point.
+#' A function that calculates bayes factor for each data pair on each grid point in log scale.
 #'
 #' @param data A dataset which is constructed by pairs of coefficient
 #' values \eqn{ \beta } and standard errors \eqn{ se(\beta)}.
 #' @param hyperparam A two-dimensional vector denoting all the grid points, namely, \eqn{k} x \eqn{\omega}.
 #'
 #'
-#' @return A list records all the bayes factor values.
+#' @return A list records all the log scale bayes factor values.
 #'
 #' @export
 #'
@@ -24,7 +24,7 @@ bf.cal<-function(data,hyperparam){
     for (k in 1:K){
       k2<-hyperparam[k,1]^2
       oa2<-hyperparam[k,2]^2
-      bfn[(i-1)*K+k]<-integrate(function(x,param=data,z=i,size=m){
+      bfnmed<-integrate(function(x,param=data,z=i,size=m){
         val<-1
         for (j in 1:size)
         {
@@ -39,30 +39,42 @@ bf.cal<-function(data,hyperparam){
 
         return(val)
       },-Inf,Inf)$value
+      bfn[(i-1)*K+k]<-log(bfnmed)
     }
   }
   bfn<-unlist(bfn)
 
   for (i in 1:n){
-    val0=1
+    bf.null=0
     for (j in 1:m){
       beta<-data[i,2*(j-1)+1]
       ds2<-data[i,2*(j-1)+2]**2
       fac<-1/(2*pi*ds2)
-      val0=val0*sqrt(fac)*exp(-0.5*beta^2/ds2)
-      if (val0==0){
-        val0<-1e-300
-      }
+      bf.null<-bf.null+0.5*log(fac)-0.5*beta^2/ds2
     }
-    bfd[i]<-val0
+    bfd[i]<-bf.null
   }
 
-  for (i in 1:n){
+
+ for (i in 1:n){
     for (k in 1:K){
-      bf[(i-1)*(K+1)+1]<-1
+
+      bf[(i-1)*(K+1)+1]<-0
+
       bfmed<-bfn[(i-1)*K+k]/bfd[i]
-      if (bfmed==Inf){bfmed=1e300}
+
+      if (is.infinite(bfmed)){
+        k2<-hyperparam[k,1]^2
+        oa2<-hyperparam[k,2]^2
+
+        bfapx<-bf.approx(i,data,m,k2,oa2)
+
+        bf[(i-1)*(K+1)+k+1]<-bfapx
+        #print(bfapx)
+      }
+      else{
       bf[(i-1)*(K+1)+k+1]<-bfmed
+      }
     }
   }
   return(bf)

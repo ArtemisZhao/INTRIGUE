@@ -13,8 +13,8 @@ values \eqn{ \beta } and standard errors \eqn{ se(\beta)}.}
 \item{hyperparam}{A two-dimensional vector denoting all the grid points, namely, \eqn{k} x \eqn{\omega}.}
 }
 \value{
-A list records all the bayes factor values.
+A list records all the log scale bayes factor values.
 }
 \description{
-A function that calculates bayes factor for each data pair on each grid point.
+A function that calculates bayes factor for each data pair on each grid point in log scale.
 }

@@ -3,7 +3,7 @@
 #' Calculate the updated loglikelihood value in EM algorithm, and to evaluate whether converge or not.
 #'
 #' @param w The current weight vector
-#' @param bf A vector recording all the bayes factor values.
+#' @param bf A vector recording all the bayes factor values in log scale.
 #'
 #' @return  Negative summation of loglikelihood values.
 #'
@@ -15,9 +15,8 @@ bf.loglik<-function(w,bf){
   loglik<-0
   sumloglik<-1
   for (i in 1:n){
-    med<-rep(NA,K)
-    med<-w*bf[((i-1)*K+1):(i*K)]/sum(w*bf[((i-1)*K+1):(i*K)])
-    loglik[i]<-sum(log(bf[((i-1)*K+1):(i*K)])*med+log(w)*med)
+    med<-exp(log(w)+bf[((i-1)*K+1):(i*K)]-bf.weighted_sum(w,bf,i))
+    loglik[i]<-sum(bf[((i-1)*K+1):(i*K)]*med+log(w)*med)
     sumloglik<-sumloglik+loglik[i]
   }
   return(-sumloglik)

@@ -9,7 +9,7 @@ bf.loglik(w, bf)
 \arguments{
 \item{w}{The current weight vector}
 
-\item{bf}{A vector recording all the bayes factor values.}
+\item{bf}{A vector recording all the bayes factor values in log scale.}
 }
 \value{
 Negative summation of loglikelihood values.

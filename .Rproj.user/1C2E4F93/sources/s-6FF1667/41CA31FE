@@ -5,14 +5,14 @@
     "dirty" : false,
     "encoding" : "UTF-8",
     "folds" : "",
-    "hash" : "1059565070",
+    "hash" : "3055067937",
     "id" : "41CA31FE",
-    "lastKnownWriteTime" : 1568994391,
-    "last_content_update" : 1568994391981,
+    "lastKnownWriteTime" : 1569168265,
+    "last_content_update" : 1569168265621,
     "path" : "~/Desktop/thesis/heterotry/heterorpack/R/bf.loglik.R",
     "project_path" : "R/bf.loglik.R",
     "properties" : {
-        "cursorPosition" : "10,2",
+        "cursorPosition" : "18,56",
         "scrollLine" : "0"
     },
     "read_only" : false,
