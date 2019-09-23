@@ -13,6 +13,7 @@
 #'
 #' @examples
 bf.weighted_sum<-function(w,bf,i){
+  K<-length(w)
   bf.sum=0
   bf.m<-max(bf[((i-1)*K+1):(i*K)])
   bf.sum=sum(w*exp(bf[((i-1)*K+1):(i*K)]-bf.m))

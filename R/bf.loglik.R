@@ -13,11 +13,11 @@ bf.loglik<-function(w,bf){
   K<-length(w)
   n<-length(bf)/K
   loglik<-0
-  sumloglik<-1
+  sumloglik<-0
   for (i in 1:n){
     med<-exp(log(w)+bf[((i-1)*K+1):(i*K)]-bf.weighted_sum(w,bf,i))
-    loglik[i]<-sum(bf[((i-1)*K+1):(i*K)]*med+log(w)*med)
-    sumloglik<-sumloglik+loglik[i]
+    loglik<-sum(bf[((i-1)*K+1):(i*K)]*med+log(w)*med)
+    sumloglik<-sumloglik+loglik
   }
   return(-sumloglik)
 }

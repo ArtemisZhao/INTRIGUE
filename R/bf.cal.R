@@ -61,7 +61,7 @@ bf.cal<-function(data,hyperparam){
 
       bf[(i-1)*(K+1)+1]<-0
 
-      bfmed<-bfn[(i-1)*K+k]/bfd[i]
+      bfmed<-bfn[(i-1)*K+k]-bfd[i]
 
       if (is.infinite(bfmed)){
         k2<-hyperparam[k,1]^2
