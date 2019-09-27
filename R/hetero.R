@@ -89,7 +89,7 @@ portion<-rep(NA,3)
 
 ### Individual level probability
 for (i in 1:n){
-  eifinal[i,]<-wfinal*bf[((i-1)*K+1):(i*K)]/sum(wfinal*bf[((i-1)*K+1):(i*K)])
+  eifinal[i,]<-exp(log(wfinal)+bf[((i-1)*K+1):(i*K)]-bf.weighted_sum(wfinal,bf,i))
   catfinal[i,1]<-eifinal[i,1] #null
   #reproducible
   catfinal[i,2]<-sum(eifinal[i,which(gridweight[,1]<=cutoff)])-eifinal[i,1]
