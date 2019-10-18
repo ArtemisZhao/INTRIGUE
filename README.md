@@ -7,6 +7,9 @@ library(devtools)
 
 install_github("ArtemisZhao/INTRIGUE")
 
+## C Source
+
+
 ## Examples
 ```{r}
 data("heterodata")
@@ -15,5 +18,5 @@ names(hetero.out)
 print(hetero.out$est_prop)
 ```
 
-## References
-TBD
+## Reference
+
