@@ -5,6 +5,7 @@ This package proposes an algorithm to quantify and control reproducibility in hi
 ## Install Guidance
 library(devtools)
 
-install_github("heteropack/INTRIGUE")
+install_github("ArtemisZhao/INTRIGUE")
 
 ## References
+TBD
