@@ -1,15 +1,18 @@
 #' Bayes Factor Calculation Scheme
 #'
-#' A function that calculates bayes factor for each data pair on each grid point in log scale.
+#' A function that calculates bayes factor for each data pair on each grid point
+#'  in log scale.
 #'
 #' @param data A dataset which is constructed by pairs of coefficient
 #' values \eqn{ \beta } and standard errors \eqn{ se(\beta)}.
-#' @param hyperparam A two-dimensional vector denoting all the grid points, namely, \eqn{k} x \eqn{\omega}.
+#' @param hyperparam A two-dimensional vector denoting all the grid points,
+#' namely, \eqn{k} x \eqn{\omega}.
 #'
 #'
 #' @return A list records all the log scale bayes factor values.
 #'
-#' @export
+#' @importFrom stats integrate
+#'
 #'
 bf.cal<-function(data,hyperparam){
   K<-nrow(hyperparam)

@@ -4,7 +4,7 @@
 \name{heterodata}
 \alias{heterodata}
 \title{Simulation Dataset}
-\format{An object of class \code{matrix} with 5000 rows and 4 columns.}
+\format{An object of class \code{matrix} with 550 rows and 4 columns.}
 \usage{
 data("heterodata")
 }
@@ -15,8 +15,5 @@ The true proportion for the null, the reproducible and the irreproducible group 
 }
 \examples{
 data("heterodata")
-hetero.out<-hetero(heterodata)
-names(hetero.out)
-print(hetero.out$est_prop)
 }
 \keyword{datasets}

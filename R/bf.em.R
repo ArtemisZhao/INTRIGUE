@@ -7,7 +7,6 @@
 #'
 #' @return The updated weight vector in current M step(wnew).
 #'
-#' @export
 #'
 bf.em<-function(w,bf){
   K<-length(w)

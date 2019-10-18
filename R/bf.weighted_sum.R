@@ -9,7 +9,6 @@
 #' @return
 #' Weighted sum for bayes factor in log scale.
 #'
-#' @export
 bf.weighted_sum<-function(w,bf,i){
   K<-length(w)
   bf.sum=0

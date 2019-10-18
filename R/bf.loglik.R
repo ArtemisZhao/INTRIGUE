@@ -7,7 +7,6 @@
 #'
 #' @return  Negative summation of loglikelihood values.
 #'
-#' @export
 #'
 bf.loglik<-function(w,bf){
   K<-length(w)

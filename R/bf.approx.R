@@ -11,7 +11,6 @@
 #' @return
 #' Approximation for bayes factor in log scale.
 #'
-#' @export
 #'
 bf.approx<-function(z,param,size,k2,oa2){
   bm=0

@@ -10,11 +10,13 @@ bf.cal(data, hyperparam)
 \item{data}{A dataset which is constructed by pairs of coefficient
 values \eqn{ \beta } and standard errors \eqn{ se(\beta)}.}
 
-\item{hyperparam}{A two-dimensional vector denoting all the grid points, namely, \eqn{k} x \eqn{\omega}.}
+\item{hyperparam}{A two-dimensional vector denoting all the grid points,
+namely, \eqn{k} x \eqn{\omega}.}
 }
 \value{
 A list records all the log scale bayes factor values.
 }
 \description{
-A function that calculates bayes factor for each data pair on each grid point in log scale.
+A function that calculates bayes factor for each data pair on each grid point
+ in log scale.
 }
