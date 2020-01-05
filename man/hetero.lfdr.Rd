@@ -14,7 +14,7 @@ decision procedure won't be run.}
 categories, separately.}
 }
 \value{
-A list that preserves local false discovery rate and the corresponding reject
+A list that preserves local false discovery rate and 5tthe corresponding reject
  decision if called.
 }
 \description{

@@ -6,7 +6,7 @@
 #' decision procedure won't be run.
 #'
 #' @return
-#' A list that preserves local false discovery rate and the corresponding reject
+#' A list that preserves local false discovery rate and 5tthe corresponding reject
 #'  decision if called.
 #'
 hetero.lfdr<-function(cat,fdr.level){

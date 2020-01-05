@@ -1,4 +1,4 @@
-#' Bayes Factor Calculation Scheme
+#' Bayes Factor Calculation Scheme for CENF prior
 #'
 #' A function that calculates bayes factor for each data pair on each grid point
 #'  in log scale.
@@ -14,7 +14,7 @@
 #' @importFrom stats integrate
 #'
 #'
-bf.cal<-function(data,hyperparam){
+bf.cal.cefn<-function(data,hyperparam){
   K<-nrow(hyperparam)
   m<-ncol(data)/2
   n<-nrow(data)
@@ -25,8 +25,8 @@ bf.cal<-function(data,hyperparam){
 
   for(i in 1:n){
     for (k in 1:K){
-      k2<-hyperparam[k,1]^2
-      oa2<-hyperparam[k,2]^2
+      k2<-hyperparam[k,1]
+      oa2<-hyperparam[k,2]
       bfnmed<-integrate(function(x,param=data,z=i,size=m){
         val<-1
         for (j in 1:size)
@@ -67,8 +67,8 @@ bf.cal<-function(data,hyperparam){
       bfmed<-bfn[(i-1)*K+k]-bfd[i]
 
       if (is.infinite(bfmed)){
-        k2<-hyperparam[k,1]^2
-        oa2<-hyperparam[k,2]^2
+        k2<-hyperparam[k,1]
+        oa2<-hyperparam[k,2]
 
         bfapx<-bf.approx(i,data,m,k2,oa2)
 
