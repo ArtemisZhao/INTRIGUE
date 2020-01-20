@@ -1,0 +1,8 @@
+INTRIGUE="/Users/yizhao/Desktop/thesis/heterotry/heteropack"
+datasets="/Library/Frameworks/R.framework/Versions/3.5/Resources/library/datasets"
+grDevices="/Library/Frameworks/R.framework/Versions/3.5/Resources/library/grDevices"
+graphics="/Library/Frameworks/R.framework/Versions/3.5/Resources/library/graphics"
+heterorep="/Users/yizhao/Desktop/thesis/heterotry/heteropack"
+methods="/Library/Frameworks/R.framework/Versions/3.5/Resources/library/methods"
+stats="/Library/Frameworks/R.framework/Versions/3.5/Resources/library/stats"
+utils="/Library/Frameworks/R.framework/Versions/3.5/Resources/library/utils"

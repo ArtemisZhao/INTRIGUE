@@ -1,0 +1,26 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1568859464101.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "21D1D543",
+    "lastKnownWriteTime" : 1578249261,
+    "last_content_update" : 1578249261528,
+    "path" : "~/Desktop/reproducibility/heterotry/heteropack/R/hetero.R",
+    "project_path" : "R/hetero.R",
+    "properties" : {
+        "cursorPosition" : "164,10",
+        "docOutlineVisible" : "0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 7,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

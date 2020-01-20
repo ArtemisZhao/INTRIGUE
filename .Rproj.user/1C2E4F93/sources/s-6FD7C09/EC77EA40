@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1568859459598.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "EC77EA40",
+    "lastKnownWriteTime" : 1569864688,
+    "last_content_update" : 1569864688226,
+    "path" : "~/Desktop/reproducibility/heterotry/heteropack/R/bf.em.R",
+    "project_path" : "R/bf.em.R",
+    "properties" : {
+        "cursorPosition" : "11,10",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 3,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

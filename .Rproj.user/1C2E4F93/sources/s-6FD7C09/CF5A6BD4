@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1569863697278.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CF5A6BD4",
+    "lastKnownWriteTime" : 1571356522,
+    "last_content_update" : 1571356522193,
+    "path" : "~/Desktop/reproducibility/heterotry/heteropack/data-raw/DATASET.R",
+    "project_path" : "data-raw/DATASET.R",
+    "properties" : {
+        "cursorPosition" : "11,0",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 9,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}

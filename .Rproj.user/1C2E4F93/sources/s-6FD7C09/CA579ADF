@@ -1,0 +1,25 @@
+{
+    "collab_server" : "",
+    "contents" : "",
+    "created" : 1568858670631.000,
+    "dirty" : false,
+    "encoding" : "UTF-8",
+    "folds" : "",
+    "hash" : "0",
+    "id" : "CA579ADF",
+    "lastKnownWriteTime" : 1578248580,
+    "last_content_update" : 1578248580132,
+    "path" : "~/Desktop/reproducibility/heterotry/heteropack/R/bf.cal.cefn.R",
+    "project_path" : "R/bf.cal.cefn.R",
+    "properties" : {
+        "cursorPosition" : "70,28",
+        "scrollLine" : "0"
+    },
+    "read_only" : false,
+    "read_only_alternatives" : [
+    ],
+    "relative_order" : 1,
+    "source_on_save" : false,
+    "source_window" : "",
+    "type" : "r_source"
+}
