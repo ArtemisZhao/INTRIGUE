@@ -8,31 +8,6 @@ The repository includes source C code, R code, and necessary data to replicate o
 
 A Bayes factor calculation and EM (Expectation Maximization) algorithm procedures are included.
 
-## Liscense
-
-## Install Guidance
-```{r}
-library(devtools)
-install_github("ArtemisZhao/INTRIGUE")
-library(INTRIGUE)
-```
-
-## Examples in R
-```{r}
-data("heterodata")
-
-## CEFN prior
-hetero.out<-hetero(heterodata[1:100,],fdr.level=0.05)
-
-## META prior
-hetero.out.meta<-hetero(heterodata[1:100,],use_cefn=FALSE,fdr.level=0.05)
-
-## results
-names(hetero.out)
-
-## overall proportion
-print(hetero.out$est_prop)
-```
 
 ## Contributors
 - Xiaoquan Wen (Univerisity of Michigan)
@@ -41,3 +16,4 @@ print(hetero.out$est_prop)
 
 ## Reference and Citation
 
+"INTRIGUE: Quantify and Control Reproducibility in High-throughput Experiments"
