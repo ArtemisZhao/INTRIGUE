@@ -15,15 +15,15 @@ library(INTRIGUE)
 data("heterodata")
 ```
 
-This is a simulation dataset, containing $n=5000$ units and $m=2$ replicates. The true overall proportion for the null, the reproducible and the irreproducible signal group is $0.80$, $0.18$, $0.02$, respectively.
+This is a simulation dataset, containing n=5000 units and m=2 replicates. The true overall proportion for the null, the reproducible and the irreproducible signal group is 0.80, 0.18, 0.02, respectively.
 
-## run with CEFN prior
+## CEFN prior
 ```{r}
 ##for convenience, only test on first 100 units 
 hetero.out.cefn<-hetero(heterodata[1:100,],fdr.level=0.05)
 ```
 
-## run with META prior
+## META prior
 ```{r}
 hetero.out.meta<-hetero(heterodata[1:100,],use_cefn=FALSE,fdr.level=0.05)
 ```
@@ -34,7 +34,7 @@ names(hetero.out.cefn)
 ## overall proportion
 print(hetero.out$est_prop)
 ```
-``` 
+
 Return a list containing the following,
 
 1. gridweight: estimated weight on each grid point.
