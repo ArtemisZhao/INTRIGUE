@@ -17,10 +17,12 @@ library(INTRIGUE)
 ```
 
 ## Cpp Source
-Located under the folder <Cpp>.
+All the Cpp codes are located under the folder </Cpp>. 
 
-## Simulation
-Located under </intrigue_paper/simulation>.
+For the full description and instructions on the Cpp source please see the README under the path.
+
+## Data
+Simulation data and real data application used in INTRIGUE paper are located under the folder </intrigue_paper>.
 
 ## Contributors
 - Xiaoquan Wen (Univerisity of Michigan)
