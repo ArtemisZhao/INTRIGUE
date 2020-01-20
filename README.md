@@ -9,6 +9,19 @@ The repository includes source C code, R code, and necessary data to replicate o
 A Bayes factor calculation and EM (Expectation Maximization) algorithm procedures are included.
 
 
+## R package install guidance
+```{r}
+library(devtools)
+install_github("ArtemisZhao/INTRIGUE/Rsource")
+library(INTRIGUE)
+```
+
+## Cpp Source
+Located under the folder <Cpp>.
+
+## Simulation
+Located under </intrigue_paper/simulation>.
+
 ## Contributors
 - Xiaoquan Wen (Univerisity of Michigan)
 

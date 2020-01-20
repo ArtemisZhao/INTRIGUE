@@ -3,7 +3,7 @@
 ## R package install guidance
 ```{r}
 library(devtools)
-install_github("ArtemisZhao/INTRIGUE")
+install_github("ArtemisZhao/INTRIGUE/Rsource")
 library(INTRIGUE)
 ```
 
