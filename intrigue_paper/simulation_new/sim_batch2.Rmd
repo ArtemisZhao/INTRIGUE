@@ -1,0 +1,133 @@
+---
+title: "sim_batch2"
+author: "Yi Zhao"
+date: "3/20/2020"
+output: pdf_document
+---
+
+# 1. Simulate scale batch effect
+
+## 1.1. structure
+We annotate $g$ for the number of gene, $g=1,...,G$; $i$ for the batch id; $j$ for the sample id, $j=1,...,n$.
+
+$$y_{ijg}=\alpha_g+\beta_gx+\gamma_{ig}+\epsilon$$
+For simplicity, we only consider two batches(i=1,2). Also, condition $x$ can only take two values, namely, 0 for control and 1 for case. Furthermore, $\alpha_g=0$ for $\forall g$.
+
+Specifically,
+
+$$y_{ijg}=\beta_gx+\gamma_{g}I(i=2)+\epsilon$$
+
+## 1.2. p-value frequency validation
+
+SEE __sim_batch.Rmd__.
+
+## 1.3. INTRIGUE on batch vs non-batch estimation
+
+Now we set a part of the effects $\beta_{g}$ coming from non-null. Specifically, $200/1000$ of them comes from a normal $N(0,2)$.
+
+```{r}
+library(INTRIGUE)
+beta1<-c(rnorm(200,0,2),rep(0,800))
+```
+
+Sample size $n=40$, with 20 of them coming from the case group, the other 20 coming from the control.
+
+```{r}
+x<-rep(c(0:1),each=20)
+```
+
+We use the same procedure described above to construct $Y$ and $Ybatch$,
+
+Next, we construct another outcome Ybatch with batch effect.
+
+Notice that batchlabels are highly correlated with x values.
+```{r}
+##batchlabels
+batchlabel0<-c(rep(1,4),rep(0,16))
+batchlabel1<-c(rep(1,16),rep(0,4))
+batchlabels<-c(batchlabel0,batchlabel1)
+
+##batcheffect
+batcheffect<-c(rnorm(100,0,1),rep(0,100),rnorm(400,0,1),rep(0,400))
+
+Y<-sapply(1:length(beta1), function(i) x*beta1[i]+rnorm(40))
+
+Ybatch<-sapply(1:length(beta1), function(i) 
+  x*beta1[i]+batchlabels*batcheffect[i]+rnorm(40))
+```
+
+Perform linear regression, and pull out the estimated $\hat\beta_g$ and standard error $se(\hat{\beta}_g)$ of the estimation.
+
+```{r}
+est<-sapply(1:ncol(Y),function(j)
+  summary(lm(Y[,j]~x))$coefficient[2,c(1,2)])
+
+estbatch<-sapply(1:ncol(Ybatch),function(j) 
+  summary(lm(Ybatch[,j]~x))$coefficient[2,c(1,2)])
+
+data<-cbind(t(est),t(estbatch))
+
+```
+
+### 1.3.1. estimation result
+Apply INTRIGUE on the data and obtain the overall estimated proportion.
+
+```{r}
+batchvsnon<-hetero(data,fdr.level=0.05)
+batchvsnon$est_prop
+```
+
+### 1.3.2. visualize
+We also visualize the relationship between the two sets of $\hat{\beta}$ under the situation.
+```{r}
+plot(est[1,],estbatch[1,],xlab="hatbeta non-batch",
+     ylab="hatbeta batch",col="blue",lwd=0.5,ylim=c(-6,6))
+abline(h=0,cex=0.8)
+abline(v=0,cex=0.8)
+```
+
+
+## 1.4 INTRIGUE on batch(removed via Combat) vs non-batch estimation
+We also compute the estimation with adjusting for batch effects. 
+
+```{r}
+library(sva)
+combat<-ComBat(dat=t(Ybatch), batch=batchlabels, 
+                mod=NULL, par.prior=TRUE, mean.only = TRUE)
+zscocom<-sapply(1:nrow(combat),function(j) 
+  summary(lm(t(combat)[,j]~x))$coefficient[2,c(1,2)])
+```
+
+### 1.4.1. estimation result
+And apply intrigue on the estimation combined with the batch effect estimation after applying combat to remove.
+```{r}
+data2<-cbind(t(est),t(zscocom))
+batchadj<-hetero(data2,fdr.level = 0.05)
+batchadj$est_prop
+```
+
+### 1.4.2. visualize
+```{r}
+plot(est[1,],zscocom[1,],xlab="hatbeta non-batch",
+     ylab="hatbeta batch and adjusted via combat",col="blue",lwd=0.5,ylim=c(-6,6))
+abline(h=0,cex=0.8)
+abline(v=0,cex=0.8)
+```
+
+### 1.4.3. how many genes are affected?
+The first 200 genes are believed to come from the reproducible group. We present the decision for rejection $H_R$. 
+```{r}
+label<-c(1:1000)
+affect<-cbind(beta1,batcheffect,est[1,],estbatch[1,],zscocom[1,])
+affect<-data.frame(affect)
+names(affect)<-c("true effect","batcheffect","estimated effect size",
+                 "batched effect size","adjusted for combat")
+print("non-zero effect and batched")
+print(affect[1:20,])
+print("non-zero effect without batch")
+print(affect[101:120,])
+print("zero effect with batch")
+print(affect[201:220,])
+print("zero effect without batch")
+print(affect[601:620,])
+```
