@@ -11,6 +11,7 @@
 #'
 #' @return A list records all the log scale bayes factor values.
 #'
+#' @export
 bf.cal.meta<-function(data,hyperparam){
   param<-rbind(c(0,0),hyperparam)
   n<-nrow(data)

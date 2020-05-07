@@ -128,7 +128,7 @@ hetero<-function(data,use_cefn=TRUE,rep=NULL,irre=NULL,oa=NULL,
 
   ### gridweight
   gridweight<-cbind(rbind(c(0,0),hyperparam),wfinal)
-  rval<-c(0,hyperparam[,1]/(hyperparam[,1]+hyperparam[,2]))
+  rval<-hyperparam[,1]/(hyperparam[,1]+hyperparam[,2])
 
   hetero.res<-list(3)
   hetero.res[[1]]<-gridweight
@@ -155,9 +155,9 @@ hetero<-function(data,use_cefn=TRUE,rep=NULL,irre=NULL,oa=NULL,
       eifinal[i,]<-exp(log(wfinal)+bf[((i-1)*K+1):(i*K)]-bf.weighted_sum(wfinal,bf,i))
       catfinal[i,1]<-eifinal[i,1] #null
       #reproducible
-      catfinal[i,2]<-sum(eifinal[i,which(rval<=cutoff+0.01)])-eifinal[i,1]
+      catfinal[i,2]<-sum(eifinal[i,which(rval<=cutoff)])-eifinal[i,1]
       #irreproducible
-      catfinal[i,3]<-sum(eifinal[i,which(rval>cutoff+0.01)])
+      catfinal[i,3]<-sum(eifinal[i,which(rval>cutoff)])
     }
   }
   hetero.res[[2]]<-catfinal
@@ -173,9 +173,9 @@ hetero<-function(data,use_cefn=TRUE,rep=NULL,irre=NULL,oa=NULL,
   else{
     portion[1]<-gridweight[1,3]#null
     #reproducible
-    portion[2]<-sum(gridweight[which(rval<=cutoff+0.01),3])-gridweight[1,3]
+    portion[2]<-sum(gridweight[which(r<=cutoff),3])-gridweight[1,3]
     #irreproducible
-    portion[3]<-sum(gridweight[which(rval>cutoff+0.01),3])
+    portion[3]<-sum(gridweight[which(r>cutoff),3])
   }
   hetero.res[[3]]<-portion
 
