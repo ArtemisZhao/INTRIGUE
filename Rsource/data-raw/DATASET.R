@@ -13,8 +13,8 @@ sim_data<-function(k, omg, n=2, sd=1){
 null_data = t(sapply(1:800, function(x) sim_data(k=0,omg=0)))
 
 
-rep_data = t(sapply(1:160, function(x) sim_data(k=0.1, omg=2)))
-irr_data = t(sapply(1:40,  function(x) sim_data(k=3, omg=2)))
+rep_data = t(sapply(1:160, function(x) sim_data(k=0.1, omg=1)))
+irr_data = t(sapply(1:40,  function(x) sim_data(k=3, omg=1)))
 
 heterodata = rbind(null_data, rep_data, irr_data)
 usethis::use_data(heterodata,overwrite = TRUE)
