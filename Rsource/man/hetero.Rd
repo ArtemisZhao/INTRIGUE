@@ -5,7 +5,8 @@
 \title{Heterogeneity Evaluation}
 \usage{
 hetero(data, use_cefn = TRUE, rep = NULL, irre = NULL,
-  sq_em_tol = 1e-04, fdr.level = NULL, sample_size = NULL)
+  phi_min = NULL, phi_max = NULL, sq_em_tol = 1e-04,
+  fdr.level = NULL, sample_size = NULL)
 }
 \arguments{
 \item{data}{A dataset which is constructed by pairs of coefficient
@@ -16,11 +17,17 @@ CEFN prior is used, else, META prior is applied. The default value is TRUE.}
 
 \item{rep}{A vector, denoting all the \eqn{k^2} (under CEFN prior) or \eqn{r} (under META prior) values constructing the reproducible signals. If not specified,
 the default one is c(0.105,0.260,0.369), which corresponds to the several prior values satisfy that
-\eqn{Pr(\beta_{i,1}, \beta_{i,2} have a same sign)=0.99, 0.975, 0.95.}}
+\eqn{Pr(\beta_{i,1}, \beta_{i,2} have a same sign)=0.99, 0.975, 0.95} for CEFN prior.}
 
-\item{irre}{A vector, denoting all the \eqn{k^2} or \eqn{r} values constructing the irreproducible signals.If not specified,
+\item{irre}{A vector, denoting all the \eqn{k^2} or \eqn{r} values constructing the irreproducible signals. If not specified,
 the default one is c(2.198, 3.636, 6.735), which corresponds to the several prior values satisfy that
-\eqn{Pr(\beta_{i,1}, \beta_{i,2} have a same sign)=0.75, 0.70, 0.65.}}
+\eqn{Pr(\beta_{i,1}, \beta_{i,2} have a same sign)=0.75, 0.70, 0.65} for CEFN prior.}
+
+\item{phi_min}{A value which determines the maximum \eqn{phi}. If not specified, will be constructed
+from the input datasets.}
+
+\item{phi_max}{A value which determines the minimum \eqn{phi}. If not specified, will be constructed
+from the input datasets.}
 
 \item{sq_em_tol}{A small, positive scalar that determines when iterations should be terminated in squarem algorithm.
 The default value is \eqn{1e-4}.}

@@ -9,10 +9,14 @@
 #' CEFN prior is used, else, META prior is applied. The default value is TRUE.
 #' @param rep A vector, denoting all the \eqn{k^2} (under CEFN prior) or \eqn{r} (under META prior) values constructing the reproducible signals. If not specified,
 #' the default one is c(0.105,0.260,0.369), which corresponds to the several prior values satisfy that
-#' \eqn{Pr(\beta_{i,1}, \beta_{i,2} have a same sign)=0.99, 0.975, 0.95.}
-#' @param irre  A vector, denoting all the \eqn{k^2} or \eqn{r} values constructing the irreproducible signals.If not specified,
+#' \eqn{Pr(\beta_{i,1}, \beta_{i,2} have a same sign)=0.99, 0.975, 0.95} for CEFN prior.
+#' @param irre  A vector, denoting all the \eqn{k^2} or \eqn{r} values constructing the irreproducible signals. If not specified,
 #' the default one is c(2.198, 3.636, 6.735), which corresponds to the several prior values satisfy that
-#' \eqn{Pr(\beta_{i,1}, \beta_{i,2} have a same sign)=0.75, 0.70, 0.65.}
+#' \eqn{Pr(\beta_{i,1}, \beta_{i,2} have a same sign)=0.75, 0.70, 0.65} for CEFN prior.
+#' @param phi_min A value which determines the maximum \eqn{phi}. If not specified, will be constructed
+#' from the input datasets.
+#' @param phi_max  A value which determines the minimum \eqn{phi}. If not specified, will be constructed
+#' from the input datasets.
 #' @param sq_em_tol A small, positive scalar that determines when iterations should be terminated in squarem algorithm.
 #' The default value is \eqn{1e-4}.
 #' @param fdr.level The user-defined rejection level for false discovery rate.
@@ -42,7 +46,7 @@
 #' print(hetero.out$est_prop)
 #'
 
-hetero<-function(data,use_cefn=TRUE,rep=NULL,irre=NULL,
+hetero<-function(data,use_cefn=TRUE,rep=NULL,irre=NULL,phi_min=NULL,phi_max=NULL,
                  sq_em_tol=1e-4,fdr.level=NULL,sample_size=NULL){
 
   ####small sample correction
@@ -70,16 +74,19 @@ hetero<-function(data,use_cefn=TRUE,rep=NULL,irre=NULL,
   rcd_phi<-c()
 
   for (k in 1:(ncol(data)/2)){
-   rcd_phi<-rbind(rcd_phi,data[,2*(k-1)+1]^2+data[,2*(k-1)+2]^2)
+     rcd_phi<-rbind(rcd_phi,data[,2*(k-1)+1]^2+data[,2*(k-1)+2]^2)
+  }
+  if (is.null(phi_min)){
+     phi_min<-sqrt(mean(rcd_phi))
+  }
+  if (is.null(phi_max)){
+     phi_max<-sqrt(quantile(rcd_phi,0.99))
   }
 
-  minphi<-sqrt(mean(rcd_phi))
-  maxphi<-sqrt(quantile(rcd_phi,0.99))
-
-  philist<-maxphi
-  med<-maxphi
+  philist<-phi_max
+  med<-phi_max
 #### start maxphi and go down
-  while (med>minphi){
+  while (med>phi_min){
     med<-med/sqrt(2)
     philist<-c(philist,med)
   }

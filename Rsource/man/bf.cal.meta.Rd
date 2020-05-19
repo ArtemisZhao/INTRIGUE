@@ -4,7 +4,7 @@
 \alias{bf.cal.meta}
 \title{Bayes Factor Calculation Scheme for META prior}
 \usage{
-bf.cal.meta(data, hyperparam)
+bf.cal.meta(data, hyperparam = NULL, bf.only = FALSE)
 }
 \arguments{
 \item{data}{A dataset which is constructed by pairs of coefficient
@@ -12,9 +12,13 @@ values \eqn{ \beta } and standard errors \eqn{ se(\beta)}.}
 
 \item{hyperparam}{A two-dimensional vector denoting all the grid points,
 namely, \eqn{\phi} x \eqn{\omega}.}
+
+\item{bf.only}{A boolean, denoting whether this function is called to calculate
+Bayes factor for META prior only. Usually used when publication bias issue is the target.}
 }
 \value{
-A list records all the log scale bayes factor values.
+A list records all the log scale bayes factor values or a list records log scale
+bayes factor for null, reproducible and irreproducible model (when bf.only=TRUE).
 }
 \description{
 A function that calculates bayes factor for each data pair on each grid point
