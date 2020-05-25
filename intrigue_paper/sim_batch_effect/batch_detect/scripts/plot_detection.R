@@ -28,7 +28,7 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>heterogeneity/controller.h at master · xqwen/heterogeneity</title>
+  <title>heterogeneity/plot_detection.R at master · xqwen/heterogeneity</title>
     <meta name="description" content="Contribute to xqwen/heterogeneity development by creating an account on GitHub.">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
@@ -38,10 +38,10 @@
     <meta property="og:image" content="https://avatars3.githubusercontent.com/u/2078512?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="xqwen/heterogeneity" /><meta property="og:url" content="https://github.com/xqwen/heterogeneity" /><meta property="og:description" content="Contribute to xqwen/heterogeneity development by creating an account on GitHub." />
 
   <link rel="assets" href="https://github.githubassets.com/">
-    <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6NTMyMTgxMzczOmQ1YWQ2YWQ0Yzk0ZjQwZjZhYmJkOGE5YTJkODc2NTgyNGUyMzk2ODVhZWM5N2M1OTMxODFhOTE3ZWJiZjYzNjk=--706aca2a59ccf1ec5890e830d4704b83e3b5897e">
+    <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6NTMyMTgxMzczOjExZjNhY2E5MDcyZWM2Y2IzZDg2YWFmZTVkY2E0YzllYzQzOWFhNGJmOGM5NDJjYTVmZjQ1MzlmYjI4YzczYzc=--a942d3a3bcfdaefd9f8c0bd8791450e81086a38b">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
 
-  <meta name="request-id" content="EF94:390E:136F079:1BB8861:5ECB5113" data-pjax-transient="true" /><meta name="html-safe-nonce" content="0653e9f47ac38efe0cc2745df3697051672a2dab" data-pjax-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS94cXdlbi9oZXRlcm9nZW5laXR5L3RyZWUvbWFzdGVyL3NyYyIsInJlcXVlc3RfaWQiOiJFRjk0OjM5MEU6MTM2RjA3OToxQkI4ODYxOjVFQ0I1MTEzIiwidmlzaXRvcl9pZCI6IjE5OTYzMTIxMDUwOTgxOTY0ODEiLCJyZWdpb25fZWRnZSI6ImlhZCIsInJlZ2lvbl9yZW5kZXIiOiJpYWQifQ==" data-pjax-transient="true" /><meta name="visitor-hmac" content="084db2e8c99238c4c9cdbf104b39d40daa6ebed28eb1ef1e0d364458ff7f07ca" data-pjax-transient="true" />
+  <meta name="request-id" content="EF3E:4FEA:9F8D98:FDAF79:5ECB4D33" data-pjax-transient="true" /><meta name="html-safe-nonce" content="0653e9f47ac38efe0cc2745df3697051672a2dab" data-pjax-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS94cXdlbi9oZXRlcm9nZW5laXR5L3RyZWUvbWFzdGVyL2ludHJpZ3VlX3BhcGVyL3NpbV9iYXRjaF9lZmZlY3QvYmF0Y2hfZGV0ZWN0L3NjcmlwdHMiLCJyZXF1ZXN0X2lkIjoiRUYzRTo0RkVBOjlGOEQ5ODpGREFGNzk6NUVDQjREMzMiLCJ2aXNpdG9yX2lkIjoiMTk5NjMxMjEwNTA5ODE5NjQ4MSIsInJlZ2lvbl9lZGdlIjoiaWFkIiwicmVnaW9uX3JlbmRlciI6ImlhZCJ9" data-pjax-transient="true" /><meta name="visitor-hmac" content="7ab6a8ec0445b6d2129b6129ef735bdea94a2f22e71e2b0b1532b33cc970cecb" data-pjax-transient="true" />
 
 
 
@@ -76,21 +76,21 @@
 
       <meta name="expected-hostname" content="github.com">
 
-      <meta name="js-proxy-site-detection-payload" content="N2I3ZDc5OGZiMGQ3M2E4Yzg4MzczM2I5YWE3ZjgwMTIxMWYwZDhiOWViMTc5YTkxMjIxYzIzNmY4ZDI0YzA1ZHx7InJlbW90ZV9hZGRyZXNzIjoiNjguNDguMjQ2LjExIiwicmVxdWVzdF9pZCI6IkVGOTQ6MzkwRToxMzZGMDc5OjFCQjg4NjE6NUVDQjUxMTMiLCJ0aW1lc3RhbXAiOjE1OTAzODI4OTUsImhvc3QiOiJnaXRodWIuY29tIn0=">
+      <meta name="js-proxy-site-detection-payload" content="ZTBkMjc5YjdlMDYzOTVmYzZkMDE3NDVhOTNmYzhmNjYxZTQxODlkOGQ3MzI0NmViN2JmYWFhZDhlNzg0Y2I2MHx7InJlbW90ZV9hZGRyZXNzIjoiNjguNDguMjQ2LjExIiwicmVxdWVzdF9pZCI6IkVGM0U6NEZFQTo5RjhEOTg6RkRBRjc5OjVFQ0I0RDMzIiwidGltZXN0YW1wIjoxNTkwMzgxODgzLCJob3N0IjoiZ2l0aHViLmNvbSJ9">
 
     <meta name="enabled-features" content="MARKETPLACE_PENDING_INSTALLATIONS,PAGE_STALE_CHECK,JS_CHUNKING">
 
   <meta http-equiv="x-pjax-version" content="324ebb008cefa0ee2e8715506860e757">
   
 
-      <link href="https://github.com/xqwen/heterogeneity/commits/master.atom?token=AG3TLGIMSJHEKYM5NXLHKXF425AD4" rel="alternate" title="Recent Commits to heterogeneity:master" type="application/atom+xml">
+      <link href="https://github.com/xqwen/heterogeneity/commits/master.atom?token=AG3TLGJO2JHWWKLPOGIKFS54246EU" rel="alternate" title="Recent Commits to heterogeneity:master" type="application/atom+xml">
 
   <meta name="go-import" content="github.com/xqwen/heterogeneity git https://github.com/xqwen/heterogeneity.git">
 
   <meta name="octolytics-dimension-user_id" content="2078512" /><meta name="octolytics-dimension-user_login" content="xqwen" /><meta name="octolytics-dimension-repository_id" content="200281938" /><meta name="octolytics-dimension-repository_nwo" content="xqwen/heterogeneity" /><meta name="octolytics-dimension-repository_public" content="false" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="200281938" /><meta name="octolytics-dimension-repository_network_root_nwo" content="xqwen/heterogeneity" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
 
 
-    <link rel="canonical" href="https://github.com/xqwen/heterogeneity/blob/master/src/controller.h" data-pjax-transient>
+    <link rel="canonical" href="https://github.com/xqwen/heterogeneity/blob/master/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R" data-pjax-transient>
 
 
   <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
@@ -164,7 +164,7 @@
           spellcheck="false"
           autocomplete="off"
           >
-          <input type="hidden" value="8lX4hR8opAEzJGO3VorGhOoef1oAm4NcaenJ9/VogTMNWicVLMOaPyGnzErvzhRfi1DlV0cLcWJi4NXBNiMezg==" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
+          <input type="hidden" value="H/ZR7I8m2n4RPHShHW47MFBeHXYNtIwLrNFz3SNmWD/g+Y58vM3kQAO/21ykKunrMRCHe0okfjWn2G/r4C3Hwg==" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
           <input type="hidden" class="js-site-search-type-field" name="type" >
             <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
 
@@ -315,7 +315,7 @@
       <img class="avatar avatar-user" src="https://avatars2.githubusercontent.com/u/28784025?s=40&amp;v=4" width="20" height="20" alt="@ArtemisZhao" />
       ArtemisZhao
 </a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="0Sb9lo5xMKzcXcDhjQbsmY037QnPZUGlvE/Y1bLiPi6EImKlvBZ+aS6Msxl1v8Dn+Y5UW6T3Cbmn8uKs5fVZ4g==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="WRsGTvpHFsT5fUcGvZcpdpAyp9ilEY+Hy78dfIlPNhIMH5l9yCBYAQusNP5FLgUI5Iseis6Dx5vQAicF3lhR3g==" />
       <button type="submit" class="Header-link mr-0 mr-lg-3 py-2 py-lg-3 border-top border-lg-top-0 border-white-fade-15 d-lg-none btn-link d-block width-full text-left" data-ga-click="Header, sign out, icon:logout" style="padding-left: 2px;">
         <svg class="octicon octicon-sign-out v-align-middle" viewBox="0 0 16 17" version="1.1" width="16" height="17" aria-hidden="true"><path fill-rule="evenodd" d="M12 9V7H8V5h4V3l4 3-4 3zm-2 3H6V3L2 1h8v3h1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1v11.38c0 .39.22.73.55.91L6 16.01V13h4c.55 0 1-.45 1-1V8h-1v4z"></path></svg>
         Sign out
@@ -412,7 +412,7 @@
   " data-team-hovercards-enabled>
   <details class="js-user-status-details details-reset details-overlay details-overlay-dark">
     <summary class="btn-link btn-block link-gray no-underline js-toggle-user-status-edit toggle-user-status-edit "
-      role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:2078512,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:28784025,&quot;originating_url&quot;:&quot;https://github.com/xqwen/heterogeneity/blob/master/src/controller.h&quot;}}" data-hydro-click-hmac="45ad14b9112b43c27997f7cd5c2ae5c750e244175f728a51c708b93654fa94cc">
+      role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:2078512,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:28784025,&quot;originating_url&quot;:&quot;https://github.com/xqwen/heterogeneity/blob/master/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R&quot;}}" data-hydro-click-hmac="8741f1ceee63f5e522d738b3d658be8aae73717fb0aa4ca809ac8c9d3ce12baf">
       <div class="d-flex">
         <div class="f6 lh-condensed user-status-header
           d-inline-block v-align-middle
@@ -439,7 +439,7 @@
       </div>
     </summary>
     <details-dialog class="details-dialog rounded-1 anim-fade-in fast Box Box--overlay" role="dialog" tabindex="-1">
-      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="wS6ZgUWR5VRWT0GOsiQNZmzjK5ZplqKSJvp0cjFCVxiNxe9SaoKSMuhzFYWHob8EY9vm2kEv3YfLByt9CJ2ZPw==" />
+      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="nOqAsEzrN1tLp96Ej7wV6gWaREUnexe1ylt1wkVhd+fQAfZjY/hAPfWbio+6OaeICqKJCQ/CaKAnpirNfL65wA==" />
         <div class="Box-header bg-gray border-bottom p-3">
           <button class="Box-btn-octicon js-toggle-user-status-edit btn-octicon float-right" type="reset" aria-label="Close dialog" data-close-dialog>
             <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"></path></svg>
@@ -557,17 +557,17 @@
       </li>
       <li class="dropdown-divider" role="none"></li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2020-05-25T01:31:35-04:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2020-05-25T01:14:43-04:00">
             in 30 minutes
           </button>
         </li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2020-05-25T02:01:35-04:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2020-05-25T01:44:43-04:00">
             in 1 hour
           </button>
         </li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2020-05-25T05:01:35-04:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2020-05-25T04:44:43-04:00">
             in 4 hours
           </button>
         </li>
@@ -624,10 +624,10 @@
     class="dropdown-item btn-link"
     role="menuitem"
     data-feature-preview-trigger-url="/users/ArtemisZhao/feature_previews"
-    data-feature-preview-close-details="{&quot;event_type&quot;:&quot;feature_preview.clicks.close_modal&quot;,&quot;payload&quot;:{&quot;originating_url&quot;:&quot;https://github.com/xqwen/heterogeneity/blob/master/src/controller.h&quot;,&quot;user_id&quot;:28784025}}"
-    data-feature-preview-close-hmac="7ce3360ff565bb12be7a91d879de3055feb7fa62cad8347b0b8d5920e007dedc"
-    data-hydro-click="{&quot;event_type&quot;:&quot;feature_preview.clicks.open_modal&quot;,&quot;payload&quot;:{&quot;link_location&quot;:&quot;user_dropdown&quot;,&quot;originating_url&quot;:&quot;https://github.com/xqwen/heterogeneity/blob/master/src/controller.h&quot;,&quot;user_id&quot;:28784025}}"
-    data-hydro-click-hmac="8a6c448d7a7fa64eb8b08f992d032533c54fe50890511cae9659705462af3cb4"
+    data-feature-preview-close-details="{&quot;event_type&quot;:&quot;feature_preview.clicks.close_modal&quot;,&quot;payload&quot;:{&quot;originating_url&quot;:&quot;https://github.com/xqwen/heterogeneity/blob/master/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R&quot;,&quot;user_id&quot;:28784025}}"
+    data-feature-preview-close-hmac="69fe78b061766f5f0fdeb097bcdba22dc99ddf14013d26e51cdc28d0c51c1ea3"
+    data-hydro-click="{&quot;event_type&quot;:&quot;feature_preview.clicks.open_modal&quot;,&quot;payload&quot;:{&quot;link_location&quot;:&quot;user_dropdown&quot;,&quot;originating_url&quot;:&quot;https://github.com/xqwen/heterogeneity/blob/master/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R&quot;,&quot;user_id&quot;:28784025}}"
+    data-hydro-click-hmac="94a6cc994765d3628f20141c43cf2244ff293ae739997323796da16922ed683b"
   >
     Feature preview
   </button>
@@ -636,12 +636,12 @@
 
     <a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a>
     <a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="NvrjAduMloM59PHS+gHimiZ2gWwqBgIQIKqPfii1oX1j/nwy6evYRsslgioCuM7kUs84PkGUSgw7F7UHf6LGsQ==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="A3PND6ttGaRpfAjGCrDMIoQEJLuAoPxhBYRjoovcf5FWd1I8mQpXYZutez7yCeBc8L2d6esytH0eOVnb3MsYXQ==" />
       
       <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
         Sign out
       </button>
-      <input type="text" name="required_field_f843" hidden="hidden" class="form-control" /><input type="hidden" name="timestamp" value="1590382895217" class="form-control" /><input type="hidden" name="timestamp_secret" value="4ade15b4a876690cfd53023302bd760b7daaaed8c21904e27fc36748b5188481" class="form-control" />
+      <input type="text" name="required_field_d97b" hidden="hidden" class="form-control" /><input type="hidden" name="timestamp" value="1590381883048" class="form-control" /><input type="hidden" name="timestamp_secret" value="4e3d32955865027ef9d248e58df75a85ff18d054ab13f69ddb17e023d4a8c26c" class="form-control" />
 </form>  </details-menu>
 </details>
 
@@ -729,10 +729,10 @@
 
   <li>
     
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="clearfix js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="VHyXGfgR9nkXD+vdcf6RqotajqxUZ4IzO4p3DDPgvR/YG1DwVrnA8rNNxOEROJVTvs9dvlktPm553vVHpRESJg==" />      <input type="hidden" name="repository_id" value="200281938">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="clearfix js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="ZGXwxwaCu5e4ekJSLUTl/lFFGvgiiZIkH5qiaddAoa3oAjcuqCqNHBw4bW5NguEHZNDJ6i/DLnldziAiQbEOlA==" />      <input type="hidden" name="repository_id" value="200281938">
 
       <details class="details-reset details-overlay select-menu float-left">
-        <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:200281938,&quot;originating_url&quot;:&quot;https://github.com/xqwen/heterogeneity/blob/master/src/controller.h&quot;,&quot;user_id&quot;:28784025}}" data-hydro-click-hmac="b8bb766d50432cc4c978d4c30c62e5fbc02aa097cb5da808c448cbb87aaa8b72" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
+        <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:200281938,&quot;originating_url&quot;:&quot;https://github.com/xqwen/heterogeneity/blob/master/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R&quot;,&quot;user_id&quot;:28784025}}" data-hydro-click-hmac="67dbb4e7cb0a656cedd1912c75f3d87b0710ad3954019bbe89b91f743392777d" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
               <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"></path></svg>
               Watch
           </span>
@@ -803,9 +803,9 @@
 
   <li>
       <div class="js-toggler-container js-social-container starring-container on">
-    <form class="starred js-social-form" action="/xqwen/heterogeneity/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="1Dn2FBapnWKZXjpGPCDh/mkvH0IWpl7e0CPQu48pja5kGL/OlIBPd+w5+wjxIyc/xC4Fqq1qTG14q+orycCk3w==" />
+    <form class="starred js-social-form" action="/xqwen/heterogeneity/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="21mr+7bgH4flXmjskLJvupuDSR2QIt8hRopVp2wT/AtreOIhNMnNkpA5qaJdsal7NoJT9SvuzZLuAm83KvrVeg==" />
       <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar xqwen/heterogeneity" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:200281938,&quot;originating_url&quot;:&quot;https://github.com/xqwen/heterogeneity/blob/master/src/controller.h&quot;,&quot;user_id&quot;:28784025}}" data-hydro-click-hmac="a7746cd5bf4fb133b320ab73e04a1824aebb48d040679e1de5e20aa3bbddcedd" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg height="16" class="octicon octicon-star v-align-text-bottom" vertical_align="text_bottom" viewBox="0 0 14 16" version="1.1" width="14" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar xqwen/heterogeneity" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:200281938,&quot;originating_url&quot;:&quot;https://github.com/xqwen/heterogeneity/blob/master/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R&quot;,&quot;user_id&quot;:28784025}}" data-hydro-click-hmac="0569231d9be6c88465b298d44b1ba206ba65a54b6d88f8aa8fc4ee187a97d74b" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg height="16" class="octicon octicon-star v-align-text-bottom" vertical_align="text_bottom" viewBox="0 0 14 16" version="1.1" width="14" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
 
         Unstar
 </button>        <a class="social-count js-social-count" href="/xqwen/heterogeneity/stargazers"
@@ -813,9 +813,9 @@
            1
         </a>
 </form>
-    <form class="unstarred js-social-form" action="/xqwen/heterogeneity/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="BF3bgxRFHptiul7YRVGK6v0ToURa9P9aZPwuZk+4jYIYKdTOcpQ7WIZ7VVidmMjzbnfowZIZUH2puQKO0RJF5A==" />
+    <form class="unstarred js-social-form" action="/xqwen/heterogeneity/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="t4CVLsOM956JxWxcunCyD9NOC8WElO2fGmrupy6tQ7ir9JpjpV3SXW0EZ9xiufAWQCpCQEx5QrjXL8JPsAeL3g==" />
       <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star xqwen/heterogeneity" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:200281938,&quot;originating_url&quot;:&quot;https://github.com/xqwen/heterogeneity/blob/master/src/controller.h&quot;,&quot;user_id&quot;:28784025}}" data-hydro-click-hmac="107b18ebda55ccc3a1111a2c2a13cf20ae850f389625d7de56c067b3c59e9602" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg height="16" class="octicon octicon-star v-align-text-bottom" vertical_align="text_bottom" viewBox="0 0 14 16" version="1.1" width="14" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star xqwen/heterogeneity" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:200281938,&quot;originating_url&quot;:&quot;https://github.com/xqwen/heterogeneity/blob/master/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R&quot;,&quot;user_id&quot;:28784025}}" data-hydro-click-hmac="200cb4614f48ce055a4a3567fb112fc975492ea936050582c5092065d70c0630" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg height="16" class="octicon octicon-star v-align-text-bottom" vertical_align="text_bottom" viewBox="0 0 14 16" version="1.1" width="14" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"></path></svg>
 
         Star
 </button>        <a class="social-count js-social-count" href="/xqwen/heterogeneity/stargazers"
@@ -832,7 +832,7 @@
                     <summary
                   class="btn btn-sm btn-with-count"
                   title="Fork your own copy of xqwen/heterogeneity to your account"
-                  data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:200281938,&quot;originating_url&quot;:&quot;https://github.com/xqwen/heterogeneity/blob/master/src/controller.h&quot;,&quot;user_id&quot;:28784025}}" data-hydro-click-hmac="e5bd03e8a51c3b6b781e4ea527ef24f50ef075aa82683d7cf8e8f123d81907d0" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork">
+                  data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:200281938,&quot;originating_url&quot;:&quot;https://github.com/xqwen/heterogeneity/blob/master/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R&quot;,&quot;user_id&quot;:28784025}}" data-hydro-click-hmac="5c7b515fcbe1293fa7b533004452f4b6a29343443ebf94d3507a2dd58a7c923d" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork">
                   <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 00-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 002 1a1.993 1.993 0 00-1 3.72V6.5l3 3v1.78A1.993 1.993 0 005 15a1.993 1.993 0 001-3.72V9.5l3-3V4.72A1.993 1.993 0 008 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"></path></svg>
                   Fork
                 </summary>
@@ -1010,9 +1010,9 @@
   
 
 
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/xqwen/heterogeneity/blob/89f1f55180523d141797fa1c3736d62ee527419d/src/controller.h">Permalink</a>
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/xqwen/heterogeneity/blob/89f1f55180523d141797fa1c3736d62ee527419d/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R">Permalink</a>
 
-    <!-- blob contrib key: blob_contributors:v22:035d8be93a814776841f98d3d01d9ca7 -->
+    <!-- blob contrib key: blob_contributors:v22:262e88613a18b28facb6e66495777123 -->
     
 
     <div class="d-flex flex-items-start flex-shrink-0 flex-column flex-md-row pb-3">
@@ -1027,7 +1027,7 @@
     <span class="dropdown-caret"></span>
   </summary>
 
-  <details-menu class="SelectMenu SelectMenu--hasFilter" src="/xqwen/heterogeneity/refs/master/src/controller.h?source_action=show&amp;source_controller=blob" preload>
+  <details-menu class="SelectMenu SelectMenu--hasFilter" src="/xqwen/heterogeneity/refs/master/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R?source_action=show&amp;source_controller=blob" preload>
     <div class="SelectMenu-modal">
       <include-fragment class="SelectMenu-loading" aria-label="Menu is loading">
         <svg class="octicon octicon-octoface anim-pulse" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"></path></svg>
@@ -1043,13 +1043,13 @@
                 data-hotkey="t">
             Find file
           </a>
-          <clipboard-copy value="src/controller.h" class="btn btn-sm BtnGroup-item">
+          <clipboard-copy value="intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R" class="btn btn-sm BtnGroup-item">
             Copy path
           </clipboard-copy>
         </div>
       </span>
       <h2 id="blob-path" class="breadcrumb flex-auto min-width-0 text-normal flex-md-self-center ml-md-2 mr-md-3 my-2 my-md-0">
-        <span class="js-repo-root text-bold"><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/xqwen/heterogeneity"><span>heterogeneity</span></a></span></span><span class="separator">/</span><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/xqwen/heterogeneity/tree/master/src"><span>src</span></a></span><span class="separator">/</span><strong class="final-path">controller.h</strong>
+        <span class="js-repo-root text-bold"><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/xqwen/heterogeneity"><span>heterogeneity</span></a></span></span><span class="separator">/</span><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/xqwen/heterogeneity/tree/master/intrigue_paper"><span>intrigue_paper</span></a></span><span class="separator">/</span><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/xqwen/heterogeneity/tree/master/intrigue_paper/sim_batch_effect"><span>sim_batch_effect</span></a></span><span class="separator">/</span><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/xqwen/heterogeneity/tree/master/intrigue_paper/sim_batch_effect/batch_detect"><span>batch_detect</span></a></span><span class="separator">/</span><span class="js-path-segment d-inline-block wb-break-all"><a data-pjax="true" href="/xqwen/heterogeneity/tree/master/intrigue_paper/sim_batch_effect/batch_detect/scripts"><span>scripts</span></a></span><span class="separator">/</span><strong class="final-path">plot_detection.R</strong>
       </h2>
 
       <div class="BtnGroup flex-shrink-0 d-none d-md-inline-block">
@@ -1059,7 +1059,7 @@
               data-hotkey="t">
           Find file
         </a>
-        <clipboard-copy value="src/controller.h" class="btn btn-sm BtnGroup-item">
+        <clipboard-copy value="intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R" class="btn btn-sm BtnGroup-item">
           Copy path
         </clipboard-copy>
       </div>
@@ -1067,7 +1067,7 @@
 
 
 
-    <include-fragment src="/xqwen/heterogeneity/contributors/master/src/controller.h" class="Box Box--condensed commit-loader">
+    <include-fragment src="/xqwen/heterogeneity/contributors/master/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R" class="Box Box--condensed commit-loader">
       <div class="Box-body bg-blue-light f6">
         Fetching contributors&hellip;
       </div>
@@ -1088,36 +1088,36 @@
 <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
   <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
 
-      53 lines (35 sloc)
+      28 lines (20 sloc)
       <span class="file-info-divider"></span>
-    1.38 KB
+    1 KB
   </div>
 
   <div class="d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between">
 
     <div class="BtnGroup">
-      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/xqwen/heterogeneity/raw/master/src/controller.h">Raw</a>
-        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/xqwen/heterogeneity/blame/master/src/controller.h">Blame</a>
-      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/xqwen/heterogeneity/commits/master/src/controller.h">History</a>
+      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/xqwen/heterogeneity/raw/master/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R">Raw</a>
+        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/xqwen/heterogeneity/blame/master/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R">Blame</a>
+      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/xqwen/heterogeneity/commits/master/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R">History</a>
     </div>
 
 
     <div>
           <a class="btn-octicon tooltipped tooltipped-nw js-remove-unless-platform"
              data-platforms="windows,mac"
-             href="x-github-client://openRepo/https://github.com/xqwen/heterogeneity?branch=master&amp;filepath=src%2Fcontroller.h"
+             href="x-github-client://openRepo/https://github.com/xqwen/heterogeneity?branch=master&amp;filepath=intrigue_paper%2Fsim_batch_effect%2Fbatch_detect%2Fscripts%2Fplot_detection.R"
              aria-label="Open this file in GitHub Desktop"
              data-ga-click="Repository, open with desktop">
               <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"></path></svg>
           </a>
 
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/xqwen/heterogeneity/edit/master/src/controller.h" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="CSx/tQhrd3wGUcYo2/MY+408Osd2hOlCDACPfcCt0MsyKdRBaYd2EVNJQrVKtrnZotYCTq4zJWffKpoK/9jW6g==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/xqwen/heterogeneity/edit/master/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="cXgPhTsgBYLEJiXWyYespG+oTx+bYthO7Sto2+uQBza9cq/yJ4KsJNlMQ4Cqw3Lw+q2taYYhVW1390bj2Xv4Rg==" />
             <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
               aria-label="Edit this file" data-hotkey="e" data-disable-with>
               <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 011.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"></path></svg>
             </button>
 </form>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/xqwen/heterogeneity/delete/master/src/controller.h" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="PkoJPLH2GGXStvTCGkl354sUFjvTroeY8yt+A0LMn1avB8Jnc7n8v0jO/GJHyVA5RczcPborLKQY+bs/4VUnRw==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/xqwen/heterogeneity/delete/master/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="75JrgALdtXekiktRytBMkgdVjbwFJcsd5vW2Cs9OABnsIPZNyeO5HtRZxSFojR2aWLzGLPCWEEsngSgtUQDWLQ==" />
             <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
               aria-label="Delete this file" data-disable-with>
               <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"></path></svg>
@@ -1130,29 +1130,28 @@
 
       
 
-  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-c ">
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-r ">
       
 <table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip>
       <tr>
         <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
-        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">using</span> <span class="pl-k">namespace</span> <span class="pl-en">std</span><span class="pl-k">;</span></td>
+        <td id="LC1" class="blob-code blob-code-inner js-file-line">pdf(<span class="pl-v">file</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>results/batch_detect_est.pdf<span class="pl-pds">&quot;</span></span>, <span class="pl-v">width</span><span class="pl-k">=</span><span class="pl-c1">10</span>, <span class="pl-v">height</span><span class="pl-k">=</span><span class="pl-c1">6.5</span>, <span class="pl-v">bg</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>white<span class="pl-pds">&quot;</span></span>, <span class="pl-v">point</span><span class="pl-k">=</span><span class="pl-c1">16</span>)</td>
       </tr>
       <tr>
         <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
-        <td id="LC2" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-v">d1</span> <span class="pl-k">=</span> read.table(<span class="pl-s"><span class="pl-pds">&quot;</span>results/meta.detect.out<span class="pl-pds">&quot;</span></span>)</td>
       </tr>
       <tr>
         <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
-        <td id="LC3" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>vector<span class="pl-pds">&gt;</span></span></td>
+        <td id="LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-v">d2</span> <span class="pl-k">=</span> read.table(<span class="pl-s"><span class="pl-pds">&quot;</span>results/cefn.detect.out<span class="pl-pds">&quot;</span></span>)</td>
       </tr>
       <tr>
         <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
-        <td id="LC4" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&lt;</span>string<span class="pl-pds">&gt;</span></span></td>
+        <td id="LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-v">r1</span> <span class="pl-k">=</span> <span class="pl-smi">d1</span><span class="pl-k">$</span><span class="pl-smi">V3</span><span class="pl-k">/</span><span class="pl-smi">d1</span><span class="pl-k">$</span><span class="pl-smi">V4</span></td>
       </tr>
       <tr>
         <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
-        <td id="LC5" class="blob-code blob-code-inner js-file-line">#<span class="pl-k">include</span> <span class="pl-s"><span class="pl-pds">&quot;</span>GenEM_mixture.h<span class="pl-pds">&quot;</span></span></td>
+        <td id="LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-v">r2</span> <span class="pl-k">=</span> <span class="pl-smi">d2</span><span class="pl-k">$</span><span class="pl-smi">V3</span><span class="pl-k">/</span><span class="pl-smi">d2</span><span class="pl-k">$</span><span class="pl-smi">V4</span></td>
       </tr>
       <tr>
         <td id="L6" class="blob-num js-line-number" data-line-number="6"></td>
@@ -1161,202 +1160,97 @@
       </tr>
       <tr>
         <td id="L7" class="blob-num js-line-number" data-line-number="7"></td>
-        <td id="LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-k">class</span> <span class="pl-en">controller</span> {</td>
+        <td id="LC7" class="blob-code blob-code-inner js-file-line">plot(<span class="pl-smi">d2</span><span class="pl-k">$</span><span class="pl-smi">V3</span><span class="pl-k">~</span><span class="pl-smi">d2</span><span class="pl-k">$</span><span class="pl-smi">V1</span>, <span class="pl-v">pch</span><span class="pl-k">=</span><span class="pl-c1">16</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>red<span class="pl-pds">&quot;</span></span>, <span class="pl-v">xlab</span><span class="pl-k">=</span> expression(paste(<span class="pl-s"><span class="pl-pds">&quot;</span>Batch effect magnitude<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span> (<span class="pl-pds">&quot;</span></span>,<span class="pl-smi">eta</span><span class="pl-k">/</span><span class="pl-smi">sigma</span>,<span class="pl-s"><span class="pl-pds">&quot;</span>)<span class="pl-pds">&quot;</span></span>)), <span class="pl-v">ylab</span> <span class="pl-k">=</span> <span class="pl-s"><span class="pl-pds">&quot;</span>Estimated proportion<span class="pl-pds">&quot;</span></span>)</td>
       </tr>
       <tr>
         <td id="L8" class="blob-num js-line-number" data-line-number="8"></td>
-        <td id="LC8" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC8" class="blob-code blob-code-inner js-file-line">lines(<span class="pl-smi">d2</span><span class="pl-k">$</span><span class="pl-smi">V3</span><span class="pl-k">~</span><span class="pl-smi">d2</span><span class="pl-k">$</span><span class="pl-smi">V1</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>red<span class="pl-pds">&quot;</span></span>)</td>
       </tr>
       <tr>
         <td id="L9" class="blob-num js-line-number" data-line-number="9"></td>
-        <td id="LC9" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">public:</span></td>
+        <td id="LC9" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
-        <td id="LC10" class="blob-code blob-code-inner js-file-line">        </td>
+        <td id="LC10" class="blob-code blob-code-inner js-file-line">points(<span class="pl-smi">d1</span><span class="pl-k">$</span><span class="pl-smi">V3</span><span class="pl-k">~</span><span class="pl-smi">d1</span><span class="pl-k">$</span><span class="pl-smi">V1</span>, <span class="pl-v">pch</span><span class="pl-k">=</span><span class="pl-c1">18</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>blue<span class="pl-pds">&quot;</span></span>)</td>
       </tr>
       <tr>
         <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
-        <td id="LC11" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">void</span> <span class="pl-en">load_data</span>(<span class="pl-k">char</span> *data_filei, <span class="pl-k">int</span> use_zval);</td>
+        <td id="LC11" class="blob-code blob-code-inner js-file-line">lines(<span class="pl-smi">d1</span><span class="pl-k">$</span><span class="pl-smi">V3</span><span class="pl-k">~</span><span class="pl-smi">d1</span><span class="pl-k">$</span><span class="pl-smi">V1</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>blue<span class="pl-pds">&quot;</span></span>, <span class="pl-v">lty</span> <span class="pl-k">=</span><span class="pl-c1">3</span>)</td>
       </tr>
       <tr>
         <td id="L12" class="blob-num js-line-number" data-line-number="12"></td>
-        <td id="LC12" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">void</span> <span class="pl-en">run_EM</span>(<span class="pl-k">double</span> thresh=<span class="pl-c1">0.1</span>);              </td>
+        <td id="LC12" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L13" class="blob-num js-line-number" data-line-number="13"></td>
-        <td id="LC13" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">void</span> <span class="pl-en">set_scale</span>(<span class="pl-k">double</span> val){ scale = val; };</td>
+        <td id="LC13" class="blob-code blob-code-inner js-file-line">points(<span class="pl-smi">d2</span><span class="pl-k">$</span><span class="pl-smi">V4</span><span class="pl-k">~</span><span class="pl-smi">d2</span><span class="pl-k">$</span><span class="pl-smi">V1</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>red<span class="pl-pds">&quot;</span></span>, <span class="pl-v">pch</span> <span class="pl-k">=</span> <span class="pl-c1">1</span>)</td>
       </tr>
       <tr>
         <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
-        <td id="LC14" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">void</span> <span class="pl-en">set_bf_only</span> (<span class="pl-k">int</span> bf_only_value){ bf_only = bf_only_value;};</td>
+        <td id="LC14" class="blob-code blob-code-inner js-file-line">points(<span class="pl-smi">d1</span><span class="pl-k">$</span><span class="pl-smi">V4</span><span class="pl-k">~</span><span class="pl-smi">d1</span><span class="pl-k">$</span><span class="pl-smi">V1</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>blue<span class="pl-pds">&quot;</span></span>, <span class="pl-v">pch</span> <span class="pl-k">=</span> <span class="pl-c1">5</span>)</td>
       </tr>
       <tr>
         <td id="L15" class="blob-num js-line-number" data-line-number="15"></td>
-        <td id="LC15" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">void</span> <span class="pl-en">set_sample_size</span>(vector&lt;<span class="pl-k">int</span>&gt; &amp; ssize){ sample_size_vec = ssize; };</td>
+        <td id="LC15" class="blob-code blob-code-inner js-file-line">lines(<span class="pl-smi">d2</span><span class="pl-k">$</span><span class="pl-smi">V4</span><span class="pl-k">~</span><span class="pl-smi">d2</span><span class="pl-k">$</span><span class="pl-smi">V1</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>red<span class="pl-pds">&quot;</span></span>, <span class="pl-v">lty</span><span class="pl-k">=</span><span class="pl-c1">2</span>)</td>
       </tr>
       <tr>
         <td id="L16" class="blob-num js-line-number" data-line-number="16"></td>
-        <td id="LC16" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">void</span> <span class="pl-en">set_prior_type</span>(<span class="pl-k">int</span> cefn_option) { use_cefn = cefn_option; };</td>
+        <td id="LC16" class="blob-code blob-code-inner js-file-line">lines(<span class="pl-smi">d1</span><span class="pl-k">$</span><span class="pl-smi">V4</span><span class="pl-k">~</span><span class="pl-smi">d1</span><span class="pl-k">$</span><span class="pl-smi">V1</span>, <span class="pl-v">col</span><span class="pl-k">=</span><span class="pl-s"><span class="pl-pds">&quot;</span>blue<span class="pl-pds">&quot;</span></span>, <span class="pl-v">lty</span><span class="pl-k">=</span><span class="pl-c1">4</span>)</td>
       </tr>
       <tr>
         <td id="L17" class="blob-num js-line-number" data-line-number="17"></td>
-        <td id="LC17" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">void</span> <span class="pl-en">set_prefix</span>(<span class="pl-k">char</span> *str);</td>
+        <td id="LC17" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L18" class="blob-num js-line-number" data-line-number="18"></td>
-        <td id="LC18" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC18" class="blob-code blob-code-inner js-file-line">legend(<span class="pl-s"><span class="pl-pds">&quot;</span>topleft<span class="pl-pds">&quot;</span></span>, <span class="pl-v">legend</span> <span class="pl-k">=</span> c(expression(paste(<span class="pl-c1">pi</span>[<span class="pl-smi">IR</span>], <span class="pl-s"><span class="pl-pds">&quot;</span> (CEFN)<span class="pl-pds">&quot;</span></span>)), expression(paste(<span class="pl-c1">pi</span>[<span class="pl-smi">R</span>], <span class="pl-s"><span class="pl-pds">&quot;</span> (CEFN)<span class="pl-pds">&quot;</span></span>)),expression(paste(<span class="pl-c1">pi</span>[<span class="pl-smi">IR</span>], <span class="pl-s"><span class="pl-pds">&quot;</span> (META)<span class="pl-pds">&quot;</span></span>)), expression(paste(<span class="pl-c1">pi</span>[<span class="pl-smi">R</span>], <span class="pl-s"><span class="pl-pds">&quot;</span> (META)<span class="pl-pds">&quot;</span></span>))), <span class="pl-v">col</span><span class="pl-k">=</span>c(<span class="pl-s"><span class="pl-pds">&quot;</span>red<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>red<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>blue<span class="pl-pds">&quot;</span></span>, <span class="pl-s"><span class="pl-pds">&quot;</span>blue<span class="pl-pds">&quot;</span></span>), <span class="pl-v">lty</span> <span class="pl-k">=</span> c(<span class="pl-c1">1</span>,<span class="pl-c1">2</span>,<span class="pl-c1">3</span>,<span class="pl-c1">4</span>), <span class="pl-v">pch</span><span class="pl-k">=</span>c(<span class="pl-c1">16</span>,<span class="pl-c1">1</span>,<span class="pl-c1">18</span>,<span class="pl-c1">5</span>))</td>
       </tr>
       <tr>
         <td id="L19" class="blob-num js-line-number" data-line-number="19"></td>
-        <td id="LC19" class="blob-code blob-code-inner js-file-line">    <span class="pl-k">private:</span></td>
+        <td id="LC19" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L20" class="blob-num js-line-number" data-line-number="20"></td>
-        <td id="LC20" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC20" class="blob-code blob-code-inner js-file-line">dev.off()</td>
       </tr>
       <tr>
         <td id="L21" class="blob-num js-line-number" data-line-number="21"></td>
-        <td id="LC21" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">int</span> K;</td>
+        <td id="LC21" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L22" class="blob-num js-line-number" data-line-number="22"></td>
-        <td id="LC22" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">int</span> N;</td>
+        <td id="LC22" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>x11()</span></td>
       </tr>
       <tr>
         <td id="L23" class="blob-num js-line-number" data-line-number="23"></td>
-        <td id="LC23" class="blob-code blob-code-inner js-file-line">        </td>
+        <td id="LC23" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>plot(r1~d1$V1, log=&quot;y&quot;, pch=16, col=&quot;red&quot;)</span></td>
       </tr>
       <tr>
         <td id="L24" class="blob-num js-line-number" data-line-number="24"></td>
-        <td id="LC24" class="blob-code blob-code-inner js-file-line">        vector&lt;<span class="pl-k">int</span>&gt; sample_size_vec;</td>
+        <td id="LC24" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>points(r2~d2$V1,  pch=16, col=&quot;blue&quot;)</span></td>
       </tr>
       <tr>
         <td id="L25" class="blob-num js-line-number" data-line-number="25"></td>
-        <td id="LC25" class="blob-code blob-code-inner js-file-line">
-</td>
+        <td id="LC25" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>lines(r2~d2$V1, col=&quot;blue&quot;)</span></td>
       </tr>
       <tr>
         <td id="L26" class="blob-num js-line-number" data-line-number="26"></td>
-        <td id="LC26" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">double</span> scale; <span class="pl-c"><span class="pl-c">//</span> define the minimum sig-to-noise ratio</span></td>
+        <td id="LC26" class="blob-code blob-code-inner js-file-line"><span class="pl-c"><span class="pl-c">#</span>lines(r1~d1$V1, col=&quot;red&quot;)</span></td>
       </tr>
       <tr>
         <td id="L27" class="blob-num js-line-number" data-line-number="27"></td>
-        <td id="LC27" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">int</span> use_cefn;</td>
+        <td id="LC27" class="blob-code blob-code-inner js-file-line">
+</td>
       </tr>
       <tr>
         <td id="L28" class="blob-num js-line-number" data-line-number="28"></td>
-        <td id="LC28" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">int</span> bf_only;</td>
-      </tr>
-      <tr>
-        <td id="L29" class="blob-num js-line-number" data-line-number="29"></td>
-        <td id="LC29" class="blob-code blob-code-inner js-file-line">        vector&lt;string&gt; loc_vec;</td>
-      </tr>
-      <tr>
-        <td id="L30" class="blob-num js-line-number" data-line-number="30"></td>
-        <td id="LC30" class="blob-code blob-code-inner js-file-line">        </td>
-      </tr>
-      <tr>
-        <td id="L31" class="blob-num js-line-number" data-line-number="31"></td>
-        <td id="LC31" class="blob-code blob-code-inner js-file-line">        vector&lt;<span class="pl-k">double</span>&gt; het_vec; <span class="pl-c"><span class="pl-c">//</span> heterogeneity parameter, defined by either k (cefn prior) or r (meta prior)</span></td>
-      </tr>
-      <tr>
-        <td id="L32" class="blob-num js-line-number" data-line-number="32"></td>
-        <td id="LC32" class="blob-code blob-code-inner js-file-line">        vector&lt;<span class="pl-k">double</span>&gt; eff_vec;</td>
-      </tr>
-      <tr>
-        <td id="L33" class="blob-num js-line-number" data-line-number="33"></td>
-        <td id="LC33" class="blob-code blob-code-inner js-file-line">        </td>
-      </tr>
-      <tr>
-        <td id="L34" class="blob-num js-line-number" data-line-number="34"></td>
-        <td id="LC34" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L35" class="blob-num js-line-number" data-line-number="35"></td>
-        <td id="LC35" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">double</span> prob_thresh;</td>
-      </tr>
-      <tr>
-        <td id="L36" class="blob-num js-line-number" data-line-number="36"></td>
-        <td id="LC36" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L37" class="blob-num js-line-number" data-line-number="37"></td>
-        <td id="LC37" class="blob-code blob-code-inner js-file-line">        string prefix;</td>
-      </tr>
-      <tr>
-        <td id="L38" class="blob-num js-line-number" data-line-number="38"></td>
-        <td id="LC38" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L39" class="blob-num js-line-number" data-line-number="39"></td>
-        <td id="LC39" class="blob-code blob-code-inner js-file-line">        vector&lt;<span class="pl-k">double</span>&gt; omg2_vec;</td>
-      </tr>
-      <tr>
-        <td id="L40" class="blob-num js-line-number" data-line-number="40"></td>
-        <td id="LC40" class="blob-code blob-code-inner js-file-line">        vector&lt;<span class="pl-k">double</span>&gt; k2_vec;</td>
-      </tr>
-      <tr>
-        <td id="L41" class="blob-num js-line-number" data-line-number="41"></td>
-        <td id="LC41" class="blob-code blob-code-inner js-file-line">        vector&lt;<span class="pl-k">double</span>&gt; prob_vec; <span class="pl-c"><span class="pl-c">//</span> correpsonding prob values for heterogeneity parameters_</span></td>
-      </tr>
-      <tr>
-        <td id="L42" class="blob-num js-line-number" data-line-number="42"></td>
-        <td id="LC42" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L43" class="blob-num js-line-number" data-line-number="43"></td>
-        <td id="LC43" class="blob-code blob-code-inner js-file-line">        vector&lt;vector&lt;<span class="pl-k">double</span>&gt; &gt; log10_BF_matrix;</td>
-      </tr>
-      <tr>
-        <td id="L44" class="blob-num js-line-number" data-line-number="44"></td>
-        <td id="LC44" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L45" class="blob-num js-line-number" data-line-number="45"></td>
-        <td id="LC45" class="blob-code blob-code-inner js-file-line">        GenEM_mixture gem;</td>
-      </tr>
-      <tr>
-        <td id="L46" class="blob-num js-line-number" data-line-number="46"></td>
-        <td id="LC46" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L47" class="blob-num js-line-number" data-line-number="47"></td>
-        <td id="LC47" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">void</span> <span class="pl-en">make_grid</span>(<span class="pl-k">double</span> min, <span class="pl-k">double</span> max);</td>
-      </tr>
-      <tr>
-        <td id="L48" class="blob-num js-line-number" data-line-number="48"></td>
-        <td id="LC48" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">void</span> <span class="pl-en">make_grid2</span>(<span class="pl-k">double</span> min, <span class="pl-k">double</span> max);</td>
-      </tr>
-      <tr>
-        <td id="L49" class="blob-num js-line-number" data-line-number="49"></td>
-        <td id="LC49" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">double</span> <span class="pl-en">log10_weighted_BF</span>(vector&lt;<span class="pl-k">double</span>&gt; &amp;bf_vec);</td>
-      </tr>
-      <tr>
-        <td id="L50" class="blob-num js-line-number" data-line-number="50"></td>
-        <td id="LC50" class="blob-code blob-code-inner js-file-line">        <span class="pl-k">void</span> <span class="pl-en">show_BF</span>();</td>
-      </tr>
-      <tr>
-        <td id="L51" class="blob-num js-line-number" data-line-number="51"></td>
-        <td id="LC51" class="blob-code blob-code-inner js-file-line">
-</td>
-      </tr>
-      <tr>
-        <td id="L52" class="blob-num js-line-number" data-line-number="52"></td>
-        <td id="LC52" class="blob-code blob-code-inner js-file-line">};</td>
-      </tr>
-      <tr>
-        <td id="L53" class="blob-num js-line-number" data-line-number="53"></td>
-        <td id="LC53" class="blob-code blob-code-inner js-file-line">
+        <td id="LC28" class="blob-code blob-code-inner js-file-line">
 </td>
       </tr>
 </table>
@@ -1377,7 +1271,7 @@
             Copy permalink
           </clipboard-copy>
         </li>
-        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/xqwen/heterogeneity/blame/89f1f55180523d141797fa1c3736d62ee527419d/src/controller.h">View git blame</a></li>
+        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/xqwen/heterogeneity/blame/89f1f55180523d141797fa1c3736d62ee527419d/intrigue_paper/sim_batch_effect/batch_detect/scripts/plot_detection.R">View git blame</a></li>
           <li><a class="dropdown-item" id="js-new-issue" role="menuitem" href="/xqwen/heterogeneity/issues/new">Reference in new issue</a></li>
       </ul>
     </details-menu>
