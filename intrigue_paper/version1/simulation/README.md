@@ -1,4 +1,3 @@
-
 ## Generating simulation data
 
 ```

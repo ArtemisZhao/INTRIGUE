@@ -37,7 +37,6 @@
 #'
 #' @importFrom stats runif
 #' @importFrom rlist list.append
-#' @import dplyr
 #'
 #' @export
 #'
@@ -162,13 +161,9 @@ hetero<-function(data,use_cefn=TRUE,rep=NULL,irre=NULL,phi_min=NULL,phi_max=NULL
   rval<-hyperparam[,1]/(hyperparam[,1]+hyperparam[,2])
 
   #######################bf sudo
-  if (ceiling(n*0.04)%%2==1){
-    nsudo <- (ceiling(n*0.02)+1)/2
-  }
-  if (ceiling(n*0.04)%%2==0){
-    nsudo <- ceiling(n*0.02) /2
-  }
-  nnull<- ceiling(n*0.96)
+
+  nsudo <- ceiling(n*0.01*0.015)
+  nnull<- ceiling(n*0.01*0.97)
 
   if (use_cefn){
     reploc<-which(hyperparam[,1]<=cutoff)
@@ -181,15 +176,13 @@ hetero<-function(data,use_cefn=TRUE,rep=NULL,irre=NULL,phi_min=NULL,phi_max=NULL
 
   sudorep<-rep(0,K)
   sudoirr<-rep(0,K)
-  #sudonull<-rep(-1e10,K)
+  sudonull<-rep(-1e10,K)
   sudonull[1]<-0
   sudorep[reploc+1]<-1e10
   sudoirr[irrloc+1]<-1e10
-  bftest<-c(bf,rep(sudorep,nsudo),rep(sudoirr,nsudo))
+  bftest<-c(bf,rep(sudonull,nnull),rep(sudorep,nsudo),rep(sudoirr,nsudo))
 
- ###############################3
-
-
+ ###############################
   w0<-runif(K)
   w0<-w0/sum(w0)
 
@@ -209,6 +202,7 @@ hetero<-function(data,use_cefn=TRUE,rep=NULL,irre=NULL,phi_min=NULL,phi_max=NULL
   catfinal<-matrix(NA,n,3)
   portion<-rep(NA,3)
   rval<-c(0,rval)
+
   if (use_cefn){
     ### Individual level probability
     for (i in 1:n){
