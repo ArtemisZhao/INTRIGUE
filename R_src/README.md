@@ -1,9 +1,7 @@
-# INTRIGUE: Quantify and Control Reproducibility In high-throughput Experiments - R
-
 ## R package install guidance
 ```{r}
 library(devtools)
-install_github("ArtemisZhao/INTRIGUE/Rsource")
+install_github("ArtemisZhao/INTRIGUE/R_src")
 ```
 
 ```{r}
