@@ -33,7 +33,7 @@ The command line options for running the binary are described in [here](cpp_src/
 
 ## Simulation and real data analysis 
 
-Simulation data and real data application used in INTRIGUE paper are in </intrigue_paper>. The directory contains necessary scripts and data to fully reproduce our results.
+The necessary code and data for simulation and real data application described in the INTRIGUE paper are included in ``intrigue_paper``. They should enable readers to fully reproduce our results.
 
 
 ## Docker image
