@@ -36,7 +36,7 @@ unit_ID z_1 z_2 ... z_m
 The command line syntax to run intrigue is 
 
 ```
-intrigue -d input_file [--use_cefn | --use_meta] [--zval] [-t EM_converge_thresh] [-prefix output_prefix] [-n sample_size_n1,sample_size_n2,sample_size_n3]
+intrigue -d input_file [--use_cefn | --use_meta] [--zval] [-t EM_converge_thresh] [-prefix output_prefix] [-n sample_size_n1,sample_size_n2,sample_size_n3] [--bf]
 ```
 
 The command line options are 
@@ -48,6 +48,10 @@ The command line options are
 + ``-t EM_converge_thresh]`` (optional): the increamental threshold of log10 likelihood to terminate EM run. The default is 0.05.
 +``-prefix output_prefix`` (optional): the user-specified prefix for the output files.
 +``-n sample_size_n1,sample_size_n2,sample_size_n3`` (optional): sample sizes for each studies. This information is useful for computing accurate Bayes factors with samll smaple size corrections. The sample sizes are postive concatinating integers separated by ``,``. If a single integer is provided, all studies are assumed to have the same sample size. 
++``--bf`` (option): only compute and output Bayes factors for irreproducible and reproducible categories without running the EM algorithm.
+
+
+
 
 ## Output 
 
