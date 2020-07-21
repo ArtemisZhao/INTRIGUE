@@ -9,20 +9,36 @@ The repository includes source C code, R code, and necessary data to replicate o
 A Bayes factor calculation and EM (Expectation Maximization) algorithm procedures are included.
 
 
-## R package install guidance
+## Source code
+
+The computational methods are implemented in R and C/C++.
+
+### R source
+
+Source code for R package ``INTRIGUE`` is included in ``R_src``. To install, run
+
 ```{r}
 library(devtools)
-install_github("ArtemisZhao/INTRIGUE/Rsource")
-library(INTRIGUE)
+install_github("ArtemisZhao/INTRIGUE/R_src")
 ```
 
-## Cpp Source
-All the Cpp codes are located under the folder </Cpp>. 
+### C/C++ Source
 
-For the full description and instructions on the Cpp source please see the README under the path.
+C/C++ code for a standalone binary executable is in ``cpp_src``. To compile, run
+```
+make
+```
+The command line options for running the binary are described in [here](cpp_src/README.md).
 
-## Data
-Simulation data and real data application used in INTRIGUE paper are located under the folder </intrigue_paper>.
+
+## Simulation and real data analysis 
+
+Simulation data and real data application used in INTRIGUE paper are in </intrigue_paper>. The directory contains necessary scripts and data to fully reproduce our results.
+
+
+## Docker image
+
+
 
 ## Contributors
 - Xiaoquan Wen (Univerisity of Michigan)
