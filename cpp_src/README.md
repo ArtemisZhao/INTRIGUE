@@ -46,9 +46,9 @@ The command line options are
 + ``--use_meta`` (optional)``: specify the META model as the computational model. 
 + ``--zval`` (required if the input data are formatted in z-score format): specify the input data are in z-score format
 + ``-t EM_converge_thresh]`` (optional): the increamental threshold of log10 likelihood to terminate EM run. The default is 0.05.
-+``-prefix output_prefix`` (optional): the user-specified prefix for the output files.
-+``-n sample_size_n1,sample_size_n2,sample_size_n3`` (optional): sample sizes for each studies. This information is useful for computing accurate Bayes factors with samll smaple size corrections. The sample sizes are postive concatinating integers separated by ``,``. If a single integer is provided, all studies are assumed to have the same sample size. 
-+``--bf`` (option): only compute and output Bayes factors for irreproducible and reproducible categories without running the EM algorithm.
++ ``-prefix output_prefix`` (optional): the user-specified prefix for the output files.
++ ``-n sample_size_n1,sample_size_n2,sample_size_n3`` (optional): sample sizes for each studies. This information is useful for computing accurate Bayes factors with samll smaple size corrections. The sample sizes are postive concatinating integers separated by ``,``. If a single integer is provided, all studies are assumed to have the same sample size. 
++ ``--bf`` (option): only compute and output Bayes factors for irreproducible and reproducible categories without running the EM algorithm.
 
 
 
