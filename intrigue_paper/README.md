@@ -18,6 +18,6 @@ make clean
 
 The analysis requires the C/C++ implementation of INTRIGUE, a multi-thread batch command tool [``openmp_wrapper``](https://github.com/xqwen/openmp_wrapper), and some relevant R packages from CRAN and bioconductor.
 
-We have created [a docker image](https://hub.docker.com/repository/docker/xqwen/intrigue), which has the required computational environment pre-configured. 
+We have created a [docker image](https://hub.docker.com/r/xqwen/intrigue), which has the complete computational environment pre-configured. 
 
 
