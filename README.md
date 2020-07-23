@@ -41,9 +41,10 @@ The necessary code and data for simulation and real data application described i
 
 
 ## Contributors
-- Xiaoquan Wen (Univerisity of Michigan)
 
 - Yi Zhao (University of Michigan)
+- Xiaoquan Wen (Univerisity of Michigan)
+
 
 ## Reference and Citation
 
