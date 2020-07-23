@@ -1,19 +1,18 @@
-## R package install guidance
+## Installation 
+
 ```{r}
 library(devtools)
 install_github("ArtemisZhao/INTRIGUE/R_src")
 ```
 
-```{r}
-library(INTRIGUE)
-```
 
 ## Example dataset
 ```{r}
+library(INTRIGUE)
 data("heterodata")
 ```
 
-This is a simulation dataset, containing n=5000 units and m=2 replicates. The true overall proportion for the null, the reproducible and the irreproducible signal group is 0.80, 0.18, 0.02, respectively.
+This is a simulated datasets with n=5000 experimental units (e.g., genes) and m=2 replicates. The true proportions for the null, the reproducible and the irreproducible signal categories are 0.80, 0.18, 0.02, respectively.
 
 ## CEFN prior
 ```{r}
