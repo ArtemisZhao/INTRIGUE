@@ -1,4 +1,4 @@
-all: setup intrigue analysis
+all: setup intrigue analysis idr
 setup: scripts/batch_sim.pl scripts/sim_batch_detect.R
 	perl scripts/batch_sim.pl > scripts/batch_sim.cmd
 	openmp_wrapper -d scripts/batch_sim.cmd -t 10 
@@ -14,6 +14,8 @@ analysis: output/ scripts/summarize_meta.pl scripts/summarize_cefn.pl scripts/ks
 	perl scripts/summarize_meta.pl > results/meta.detect.out
 	perl scripts/batch_ks_test.pl | sort -nk1 > results/2sample.ks.out
 	Rscript scripts/plot_detection.R
+idr:
+	Rscript scripts/idr_batch_detect.R 
 clean:
 	rm -rf data/ output/ results/ scripts/*.cmd
 
