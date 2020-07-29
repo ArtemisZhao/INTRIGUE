@@ -53,4 +53,4 @@ We provide a docker image to reproduce all our analysis described in the INTRIGU
 
 ## References and Citations
 
-[1] INTRIGUE: Quantify and Control Reproducibility in High-throughput Experiments. Zhao, Y., Sampson, M., and Wen, X. (2020) [preprint](https://bit.ly/2ACrHeJ)
+[1] INTRIGUE: Quantify and Control Reproducibility in High-throughput Experiments. Zhao, Y., Sampson, M., and Wen, X. (2020) \[[preprint](https://bit.ly/2ACrHeJ)\]
