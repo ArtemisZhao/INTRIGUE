@@ -43,7 +43,7 @@ The necessary code and data for simulation and real data application described i
 
 ## Docker image
 
-
+We provide a docker image to reproduce all our analysis described in the INTRIGUE paper. The detailed instructions are available in [docker](docker/) directory. 
 
 ## Contributors
 
