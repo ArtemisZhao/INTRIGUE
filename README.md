@@ -26,6 +26,7 @@ Source code for R package ``INTRIGUE`` is included in ``R_src``. To install, run
 library(devtools)
 install_github("ArtemisZhao/INTRIGUE/R_src")
 ```
+The pdf manual for the R package is available in [here](R_src/INTRIGUE_0.1.0.pdf).
 
 ### C/C++ Source
 
