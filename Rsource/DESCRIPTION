@@ -13,7 +13,10 @@ Description: Estimate the proportions of the null and the reproducibility and
     included.
 License: GPL-2
 Encoding: UTF-8
-Imports: SQUAREM
+Imports: 
+  SQUAREM,
+  dplyr,
+  rlist
 Depends: R (>= 3.5.1)
 LazyData: true
 RoxygenNote: 6.1.1
