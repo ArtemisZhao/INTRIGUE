@@ -35,7 +35,7 @@ null_data =sim_data(k=0, omg=0, ngene=400, ss=50, rep=e)
 rep_data = sim_data(k=0.1, omg=1, ngene=300, ss=50, rep=e)
 irr_data = sim_data(k=3, omg=1, ngene=300, ss=50, rep=e)
 heterodata = rbind(null_data, rep_data, irr_data)
-write.table(heterodata,file=paste0("sim_S5_K_", e, "_",index,".dat",sep=""),
+write.table(heterodata,file=paste0("sim_K_", e, "_",index,".dat",sep=""),
             sep=" ",row.names = TRUE,col.names = FALSE)
 
 
