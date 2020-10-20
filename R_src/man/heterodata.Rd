@@ -4,7 +4,9 @@
 \name{heterodata}
 \alias{heterodata}
 \title{Simulation Dataset}
-\format{An object of class \code{matrix} with 1000 rows and 4 columns.}
+\format{
+An object of class \code{matrix} (inherits from \code{array}) with 1000 rows and 4 columns.
+}
 \usage{
 data("heterodata")
 }

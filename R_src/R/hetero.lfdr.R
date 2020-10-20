@@ -1,6 +1,6 @@
 #' Local False Discovery Rate Evaluation
 #'
-#' @param catfinal The final individual-level probabilities of falling into three
+#' @param cat The final individual-level probabilities of falling into three
 #' categories, separately.
 #' @param fdr.level Rejection level for Local false discovery rate, if not specified, the rejection
 #' decision procedure won't be run.

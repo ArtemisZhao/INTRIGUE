@@ -4,9 +4,17 @@
 \alias{hetero}
 \title{Heterogeneity Evaluation}
 \usage{
-hetero(data, use_cefn = TRUE, rep = NULL, irre = NULL,
-  phi_min = NULL, phi_max = NULL, sq_em_tol = 1e-04,
-  fdr.level = NULL, sample_size = NULL)
+hetero(
+  data,
+  use_cefn = TRUE,
+  rep = NULL,
+  irre = NULL,
+  phi_min = NULL,
+  phi_max = NULL,
+  sq_em_tol = 1e-04,
+  fdr.level = NULL,
+  sample_size = NULL
+)
 }
 \arguments{
 \item{data}{A dataset which is constructed by pairs of coefficient
@@ -33,6 +41,8 @@ from the input datasets.}
 The default value is \eqn{1e-4}.}
 
 \item{fdr.level}{The user-defined rejection level for false discovery rate.}
+
+\item{sample_size}{The user-defined sample size.}
 }
 \value{
 A list with the following components:
@@ -52,8 +62,14 @@ for the given individuals(units) shared in different replicates.
 }
 \examples{
 data("heterodata")
+\donttest{
 hetero.out<-hetero(heterodata,fdr.level=0.05)
 names(hetero.out)
 print(hetero.out$est_prop)
+}
+
+## for CRAN check
+hetero.out<-hetero(heterodata[1:100,],fdr.level=0.05)
+
 
 }

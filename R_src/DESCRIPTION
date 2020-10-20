@@ -1,6 +1,6 @@
 Package: INTRIGUE
 Type: Package
-Title: Quantify and Control Reproducibility In high-throughput Experiments
+Title: Quantify and Control Reproducibility in High-Throughput Experiments
 Version: 0.1.0
 Author: c( person(given="Yi",family="Zhao",role=c("aut"),email="zhayi@umich.edu"),
       person(given="Xiaoquan",family="Wen",role=c("aut"),email="xqwen@umich.edu"),
@@ -17,6 +17,6 @@ Imports:
   SQUAREM,
   dplyr,
   rlist
-Depends: R (>= 3.5.1)
+Depends: R (>= 3.5.0)
 LazyData: true
-RoxygenNote: 6.1.1
+RoxygenNote: 7.1.1

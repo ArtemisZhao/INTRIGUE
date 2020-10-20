@@ -7,11 +7,11 @@
 hetero.lfdr(cat, fdr.level)
 }
 \arguments{
+\item{cat}{The final individual-level probabilities of falling into three
+categories, separately.}
+
 \item{fdr.level}{Rejection level for Local false discovery rate, if not specified, the rejection
 decision procedure won't be run.}
-
-\item{catfinal}{The final individual-level probabilities of falling into three
-categories, separately.}
 }
 \value{
 A list that preserves local false discovery rate and 5tthe corresponding reject

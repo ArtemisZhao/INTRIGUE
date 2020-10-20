@@ -20,6 +20,7 @@
 #' @param sq_em_tol A small, positive scalar that determines when iterations should be terminated in squarem algorithm.
 #' The default value is \eqn{1e-4}.
 #' @param fdr.level The user-defined rejection level for false discovery rate.
+#' @param sample_size The user-defined sample size.
 #'
 #' @return
 #'
@@ -42,9 +43,15 @@
 #'
 #' @examples
 #' data("heterodata")
+#' \donttest{
 #' hetero.out<-hetero(heterodata,fdr.level=0.05)
 #' names(hetero.out)
 #' print(hetero.out$est_prop)
+#' }
+#'
+#' ## for CRAN check
+#' hetero.out<-hetero(heterodata[1:100,],fdr.level=0.05)
+#'
 #'
 
 hetero<-function(data,use_cefn=TRUE,rep=NULL,irre=NULL,phi_min=NULL,phi_max=NULL,
