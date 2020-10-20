@@ -2,13 +2,13 @@ Package: INTRIGUE
 Type: Package
 Title: Quantify and Control Reproducibility in High-Throughput Experiments
 Version: 0.1.0
-Author: c( person(given="Yi",family="Zhao",role=c("aut"),email="zhayi@umich.edu"),
+Authors@R: c( person(given="Yi",family="Zhao",role=c("aut"),email="zhayi@umich.edu"),
       person(given="Xiaoquan",family="Wen",role=c("aut"),email="xqwen@umich.edu"),
-      person(given="Mike",family="Kleinsasser",role=c("cre"),email="mkleinsa@umich.edu")
+      person(given="Michael",family="Kleinsasser",role=c("cre"),email="mkleinsa@umich.edu")
      )
-Maintainer: Mike Kleinsasser <mkleinsa@umich.edu>
+Maintainer: Michael Kleinsasser <mkleinsa@umich.edu>
 Description: Estimate the proportions of the null and the reproducibility and
-    irreproducibility of the signal group for the input data set. The Bayes factor
+    non-reproducibility of the signal group for the input data set. The Bayes factor
     calculation and EM (Expectation Maximization) algorithm procedures are also
     included.
 License: GPL-2
